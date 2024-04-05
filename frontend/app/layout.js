@@ -12,6 +12,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
+        <div>
+          div en root layout, persiste en todos los archivos dentro de la carpeta app
+        </div>
         {children}
       </body>
     </html>
