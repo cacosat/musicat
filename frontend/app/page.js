@@ -40,7 +40,7 @@ export default function Home() {
         />
       </div>
 
-      <div>
+      <div className="flex gap-2">
         <Link href="/music" className="inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700">
             Go to Music
         </Link>
