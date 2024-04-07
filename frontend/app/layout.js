@@ -14,7 +14,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="">
+        <div className="ml-12"> {/* margin left equivalent to Navbar width */}
           <div className="">
             <Navbar />
           </div>
