@@ -1,6 +1,7 @@
 import { Inter } from "next/font/google";
 import Link from "next/link";
 import "./globals.css";
+import Navbar from "./components/Nav";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -13,12 +14,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="flex">
-          <nav className="flex flex-col bg-lefter p-4">
-            <Link href="/">Home</Link>
-            <Link href="/music">Music</Link>
-            <Link href="/profile">Profile</Link>
-          </nav>
+        <div className="">
+          <div className="">
+            <Navbar />
+          </div>
           <div>
             <div>
               div en root layout, persiste en todos los archivos dentro de la carpeta app
