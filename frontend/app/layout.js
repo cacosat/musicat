@@ -2,6 +2,7 @@ import { Inter } from "next/font/google";
 import Link from "next/link";
 import "./globals.css";
 import Navbar from "./components/Nav";
+import Chupaelpico from "./components/Search";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,6 +23,7 @@ export default function RootLayout({ children }) {
             <div>
               div en root layout, persiste en todos los archivos dentro de la carpeta app
             </div>
+            <Chupaelpico />
             <div>
               {children}
             </div>
