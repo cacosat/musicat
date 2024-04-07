@@ -9,7 +9,7 @@ export default function Home() {
         <Link href="/music" className="flex items-center justify-center px-4 py-2 border text-sm font-medium rounded-md text-white">
             Go to Music
         </Link>
-        <Link href="/profile" className="flex items-center justify-center px-4 py-2 border text-sm font-medium rounded-md text-white bg-indigo-500 hover:bg-accent-green-dark">
+        <Link href="/profile" className="flex items-center justify-center px-4 py-2 border text-sm font-medium rounded-md text-white bg-accent-blue-light hover:bg-accent-green-dark">
             Go to Profile
         </Link>
       </div>

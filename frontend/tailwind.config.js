@@ -22,7 +22,7 @@ module.exports = {
         "accent-green-dark": "#028090",
         "accent-green-light": "#5BE7A1",
         "accent-blue-dark": "#6590FE",
-        "accent-blur-light": "#5B9BE7",
+        "accent-blue-light": "#5B9BE7",
         // "gray-300": "#D4D4D4",
         // "gray-400": "#A3A3A3",
         // "gray-600": "#525252",
