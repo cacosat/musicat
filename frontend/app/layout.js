@@ -2,7 +2,9 @@ import { Inter } from "next/font/google";
 import Link from "next/link";
 import "./globals.css";
 import Navbar from "./components/Nav";
-import Chupaelpico from "./components/Search";
+import SearchBar from "./components/search";
+import { Button } from "@/components/ui/button";
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,14 +21,14 @@ export default function RootLayout({ children }) {
           <div className="">
             <Navbar />
           </div>
+          <div className="absolute inset-x-0 top-0 ml-12 flex justify-center">
+            <SearchBar name='barra de búsqueda'>
+              <Button variant="outline" type="submit">Subscribe</Button>
+              <Button variant="outline" type="submit">Subscribe</Button>
+            </SearchBar>
+          </div>
           <div>
-            <div>
-              div en root layout, persiste en todos los archivos dentro de la carpeta app
-            </div>
-            <Chupaelpico />
-            <div>
-              {children}
-            </div>
+            {children}
           </div>
         </div>
       </body>
