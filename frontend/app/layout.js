@@ -14,7 +14,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         <div className="flex">
-          <nav className="flex flex-col bg-gray-500">
+          <nav className="flex flex-col bg-lefter p-4">
             <Link href="/">Home</Link>
             <Link href="/music">Music</Link>
             <Link href="/profile">Profile</Link>
