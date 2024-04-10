@@ -5,6 +5,9 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import homeIcon from '../../assets/icons/home.png'
+import rightArrow from '@/assets/icons/rightArrow.png'
+import user from '@/assets/icons/user.png'
+import settings from '@/assets/icons/settings.png'
 
 export default function Navbar() {
     // helper funct + hooks
@@ -14,9 +17,17 @@ export default function Navbar() {
     // }
 
     return <>
-        <div className={`fixed top-0 left-0 h-screen w-12 ${ isOpen ? 'w-64' : 'w-12' } bg-lefter p-4 transition-all`}>
-            <nav className="flex flex-col text-white">
-                <button onClick={() => setIsOpen(!isOpen)} className={`${isOpen ? 'text-white' : 'text-black'} text-xl`}>lkdsajf</button>
+        <div className={`fixed top-0 left-0 h-screen ${ isOpen ? 'w-64' : 'w-16' } bg-lefter p-4 transition-all`}>
+            <nav className={`flex flex-col ${ isOpen ? ' items-start' : ' items-center' } text-white h-screen`}>
+                <button onClick={() => setIsOpen(!isOpen)} className={`${isOpen ? 'text-white' : 'text-black'} text-xl`}>
+                    <Image
+                        src={rightArrow}
+                        height={24}
+                        width={24}
+                        alt="open nav bar icon"
+                        className={`${isOpen ? 'rotate-180' : ''} rotate-0 transition-all`}
+                    />
+                </button>
                 <Link href="/" className="flex gap-2">
                     <Image
                         src={homeIcon}
@@ -26,8 +37,24 @@ export default function Navbar() {
                     />
                     <p className={`${isOpen ? '' : 'hidden'} `}>Home</p>
                 </Link>
-                <Link href="/music">Music</Link>
-                <Link href="/profile">Profile</Link>
+                <Link href="/profile" className="flex gap-2">
+                    <Image
+                        src={user}
+                        height={24}
+                        width={24}
+                        alt="profile"
+                    />
+                    <p className={`${isOpen ? '' : 'hidden'} `}>Profile</p>
+                </Link>
+                <Link href="/settings" className="flex gap-2 justify-self-end">
+                    <Image
+                        src={settings}
+                        height={24}
+                        width={24}
+                        alt="settings"
+                    />
+                    <p className={`${isOpen ? '' : 'hidden'} `}>Settings</p>
+                </Link>
             </nav>
         </div>
     </>
