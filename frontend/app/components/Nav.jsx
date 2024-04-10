@@ -17,7 +17,7 @@ export default function Navbar() {
     // }
 
     return <>
-        <div className={`fixed top-0 left-0 h-screen ${ isOpen ? 'w-64' : 'w-16' } bg-lefter p-4 transition-all`}>
+        <div className={`fixed top-0 left-0 h-screen w-fit bg-lefter p-4 transition-all`}>
             <nav className={`flex flex-col ${ isOpen ? ' items-start' : ' items-center' } text-white h-screen`}>
                 <button onClick={() => setIsOpen(!isOpen)} className={`${isOpen ? 'text-white' : 'text-black'} text-xl`}>
                     <Image
