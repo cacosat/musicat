@@ -1,9 +1,13 @@
-import Image from "next/image";
+"use client";
 import Link from "next/link";
+import { useState } from 'react';
 
 export default function Profile() {
+  // Agrega un nuevo estado para rastrear el botón activo
+  const [activeTab, setActiveTab] = useState('reseñas');
+
   return (
-    <main className="flex flex-col min-h-screen w-full">
+  <main className="flex flex-col min-h-screen w-full">
         {/* Banner como un rectángulo que abarca todo el ancho superior */}
         <div className="w-full h-64 bg-cards-light flex items-center justify-center">
           {/* Puedes agregar una imagen o texto dentro de este div */}
@@ -14,15 +18,24 @@ export default function Profile() {
        <div className="w-full h-8 flex justify-center bg-lefter">
           {/* Envoltorio de botones con ancho máximo y centrado */}
           <div className="flex" style={{ maxWidth: '600px' }}>
-              <button className="w-1/3 h-full text-center text-white font-medium focus:outline-none bg-custom-gray-300 px-10">
-                  Reseñas
-              </button>
-              <button className="w-1/3 h-full text-center text-white font-medium focus:outline-none bg-custom-gray-400 px-10">
-                  Ratings
-              </button>
-              <button className="w-1/3 h-full text-center text-white font-medium focus:outline-none bg-custom-gray-500 px-10">
-                  Guardado
-              </button>
+          <button 
+              onClick={() => setActiveTab('reseñas')}
+              className={`w-1/3 h-full text-center text-white font-medium focus:outline-none ${activeTab === 'reseñas' ? 'bg-background' : 'bg-lefter'} px-10`}
+            >
+                Reseñas
+            </button>
+            <button 
+              onClick={() => setActiveTab('ratings')}
+              className={`w-1/3 h-full text-center text-white font-medium focus:outline-none ${activeTab === 'ratings' ? 'bg-background' : 'bg-lefter'} px-10`}
+            >
+                Ratings
+            </button>
+            <button 
+              onClick={() => setActiveTab('guardado')}
+              className={`w-1/3 h-full text-center text-white font-medium focus:outline-none ${activeTab === 'guardado' ? 'bg-background' : 'bg-lefter'} px-10`}
+            >
+                Guardado
+            </button>
           </div>
         </div>
 
@@ -32,8 +45,7 @@ export default function Profile() {
                 Ir a la aplicación
             </Link>
           </div>
-          <div>Base para perfil, tiene pestañas: Reseñas, Ratings y Guardado</div>
         </div>
-    </main>
+      </main>
   );
 }
