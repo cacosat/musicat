@@ -15,8 +15,8 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <div className="ml-14 bg-background"> {/* margin left equivalent to Navbar width */}
+      <body className={`${inter.className} bg-background`}>
+        <div className="ml-14"> {/* margin left equivalent to Navbar width */}
           <div className="">
             <Navbar />
           </div>

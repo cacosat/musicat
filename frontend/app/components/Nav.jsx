@@ -17,35 +17,37 @@ export default function Navbar() {
     // }
 
     return <>
-        <div className={`fixed top-0 left-0 h-screen w-fit bg-lefter p-4 transition-all`}>
-            <nav className={`flex flex-col ${ isOpen ? ' items-start' : ' items-center' } text-white h-screen`}>
-                <button onClick={() => setIsOpen(!isOpen)} className={`${isOpen ? 'text-white' : 'text-black'} text-xl`}>
-                    <Image
-                        src={rightArrow}
-                        height={24}
-                        width={24}
-                        alt="open nav bar icon"
-                        className={`${isOpen ? 'rotate-180' : ''} rotate-0 transition-all`}
-                    />
-                </button>
-                <Link href="/" className="flex gap-2">
-                    <Image
-                        src={homeIcon}
-                        height={24}
-                        width={24}
-                        alt="home"
-                    />
-                    <p className={`${isOpen ? '' : 'hidden'} `}>Home</p>
-                </Link>
-                <Link href="/profile" className="flex gap-2">
-                    <Image
-                        src={user}
-                        height={24}
-                        width={24}
-                        alt="profile"
-                    />
-                    <p className={`${isOpen ? '' : 'hidden'} `}>Profile</p>
-                </Link>
+        <div className={`fixed top-0 left-0 w-fit h-screen bg-lefter transition-all`}>
+            <nav className={`flex flex-col justify-between px-8 py-12 gap-4 h-screen ${ isOpen ? ' items-start' : ' items-center' } text-white`}>
+                <div className="flex flex-col gap-4">
+                    <button onClick={() => setIsOpen(!isOpen)} className={`${isOpen ? 'text-white' : 'text-black'} text-xl`}>
+                        <Image
+                            src={rightArrow}
+                            height={24}
+                            width={24}
+                            alt="open nav bar icon"
+                            className={`${isOpen ? 'rotate-180' : ''} rotate-0 transition-all`}
+                        />
+                    </button>
+                    <Link href="/" className="flex gap-2">
+                        <Image
+                            src={homeIcon}
+                            height={24}
+                            width={24}
+                            alt="home"
+                        />
+                        <p className={`${isOpen ? '' : 'hidden'} `}>Home</p>
+                    </Link>
+                    <Link href="/profile" className="flex gap-2">
+                        <Image
+                            src={user}
+                            height={24}
+                            width={24}
+                            alt="profile"
+                        />
+                        <p className={`${isOpen ? '' : 'hidden'} `}>Profile</p>
+                    </Link>
+                </div>
                 <Link href="/settings" className="flex gap-2 justify-self-end">
                     <Image
                         src={settings}
