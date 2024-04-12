@@ -14,7 +14,7 @@ export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
 
     return <>
-        <div className={`fixed top-0 left-0 w-[164px] h-screen bg-lefter`}>
+        <div className={`fixed top-0 left-0 w-[180px] h-screen bg-lefter`}>
             <nav className={`flex flex-col justify-between w-fit px-8 py-9 gap-4 h-screen items-start text-white shadow-xl`}>
                 <div className="flex flex-col gap-2">
                     <button onClick={() => setIsOpen(!isOpen)} className='text-xl'>
@@ -26,7 +26,7 @@ export default function Navbar() {
                             className={`${isOpen ? 'rotate-180' : ''} rotate-0 transition-all`}
                         />
                     </button>
-                    <Link href="/" className="flex gap-2 hover:bg-[#FFFFFF1A] p-2 rounded-3xl">
+                    <Link href="/" className="flex gap-2 hover:bg-[#FFFFFF1A] p-2 rounded-xl">
                         <Image
                             src={homeIcon}
                             height={24}
@@ -35,7 +35,7 @@ export default function Navbar() {
                         />
                         <p className=''>Home</p>
                     </Link>
-                    <Link href="/profile" className="flex gap-2 hover:bg-[#FFFFFF1A] p-2 rounded-3xl">
+                    <Link href="/profile" className="flex gap-2 hover:bg-[#FFFFFF1A] p-2 rounded-xl">
                         <Image
                             src={user}
                             height={24}
@@ -45,7 +45,7 @@ export default function Navbar() {
                         <p className=''>Profile</p>
                     </Link>
                 </div>
-                <Link href="/settings" className="flex gap-2 hover:bg-[#FFFFFF1A] p-2 rounded-3xl justify-self-end">
+                <Link href="/settings" className="flex gap-2 hover:bg-[#FFFFFF1A] p-2 rounded-xl justify-self-end">
                     <Image
                         src={settings}
                         height={24}
