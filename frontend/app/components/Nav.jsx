@@ -12,15 +12,12 @@ import settings from '@/assets/icons/settings.png'
 export default function Navbar() {
     // helper funct + hooks
     const [isOpen, setIsOpen] = useState(false);
-    // const toggleNav = (state) => {
-    //     setIsOpen(!isOpen);
-    // }
 
     return <>
-        <div className={`fixed top-0 left-0 w-fit h-screen bg-lefter transition-all`}>
-            <nav className={`flex flex-col justify-between px-8 py-12 gap-4 h-screen ${ isOpen ? ' items-start' : ' items-center' } text-white`}>
-                <div className="flex flex-col gap-4">
-                    <button onClick={() => setIsOpen(!isOpen)} className={`${isOpen ? 'text-white' : 'text-black'} text-xl`}>
+        <div className={`fixed top-0 left-0 w-[164px] h-screen bg-lefter`}>
+            <nav className={`flex flex-col justify-between w-fit px-8 py-9 gap-4 h-screen items-start text-white shadow-xl`}>
+                <div className="flex flex-col gap-2">
+                    <button onClick={() => setIsOpen(!isOpen)} className='text-xl'>
                         <Image
                             src={rightArrow}
                             height={24}
@@ -29,33 +26,33 @@ export default function Navbar() {
                             className={`${isOpen ? 'rotate-180' : ''} rotate-0 transition-all`}
                         />
                     </button>
-                    <Link href="/" className="flex gap-2">
+                    <Link href="/" className="flex gap-2 hover:bg-[#FFFFFF1A] p-2 rounded-3xl">
                         <Image
                             src={homeIcon}
                             height={24}
                             width={24}
                             alt="home"
                         />
-                        <p className={`${isOpen ? '' : 'hidden'} `}>Home</p>
+                        <p className=''>Home</p>
                     </Link>
-                    <Link href="/profile" className="flex gap-2">
+                    <Link href="/profile" className="flex gap-2 hover:bg-[#FFFFFF1A] p-2 rounded-3xl">
                         <Image
                             src={user}
                             height={24}
                             width={24}
                             alt="profile"
                         />
-                        <p className={`${isOpen ? '' : 'hidden'} `}>Profile</p>
+                        <p className=''>Profile</p>
                     </Link>
                 </div>
-                <Link href="/settings" className="flex gap-2 justify-self-end">
+                <Link href="/settings" className="flex gap-2 hover:bg-[#FFFFFF1A] p-2 rounded-3xl justify-self-end">
                     <Image
                         src={settings}
                         height={24}
                         width={24}
                         alt="settings"
                     />
-                    <p className={`${isOpen ? '' : 'hidden'} `}>Settings</p>
+                    <p className=''>Settings</p>
                 </Link>
             </nav>
         </div>
