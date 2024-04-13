@@ -2,33 +2,52 @@
 import Link from "next/link";
 import { useState } from 'react';
 import SearchBar from "../components/search";
+import Image from 'next/image'; // Asegúrate de que está importado
 
 export default function Profile() {
   // Agrega un nuevo estado para rastrear el botón activo
   const [activeTab, setActiveTab] = useState('reseñas');
   return (
     <main className="flex flex-col min-h-screen w-full">
-      <div className="flex items-center justify-between w-full bg-cards-light" style={{ padding: '0 15%', height: '350px' }}>
-        {/* SearchBar debe permanecer en la parte superior */}
-        <div className="absolute inset-x-0 top-0 mx-auto my-8 flex justify-center z-10">
-        <SearchBar name="barra de búsqueda" className="w-full" />
-        </div>
+      <div className="flex items-center justify-between w-full relative" style={{ padding: '0 15%', height: '350px' }}>
+        {/* Imagen de fondo para el rectángulo azul */}
+        <Image
+          src="/Santiago.jpeg" // Asegúrate de cambiar la ruta a la imagen que desees usar
+          alt="Fondo azul"
+          layout="fill"
+          objectFit="cover"
+          className="z-0" // Mantiene la imagen en el fondo
+        />
+        
+        {/* Div de degradado */}
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-50 z-5"></div>
 
-        {/* Asegúrate de que el círculo esté alineado a la izquierda y agregue margen en la parte superior para el título */}
-        <div className="flex items-start justify-start w-1/3 pt-20"> {/* Agrega padding-top para bajar el título */}
-          <div className="w-56 h-56 bg-background rounded-full"></div>
+        {/* SearchBar debe permanecer en la parte superior */}
+        <div className="absolute inset-x-0 top-0 mx-auto my-8 px-4 w-full flex justify-center z-10">
+        {/* Pasa la prop fullWidth con el valor true */}
+        <SearchBar name="barra de búsqueda" fullWidth={true} />
+      </div>
+
+        {/* Otros elementos */}
+        <div className="flex items-start justify-start w-1/3 pt-16 z-10">
+          <div className="w-56 h-56 rounded-full overflow-hidden relative">
+            <Image
+              src="/Socias.jpeg"
+              alt="Imagen de perfil"
+              layout="fill"
+              objectFit="cover"
+            />
+          </div>
         </div>
         
-        {/* Añade un padding-left para alinear con el círculo y margen en la parte superior para el título */}
-        <div className="w-2/3 h-56 flex flex-col items-start justify-between pl-16 pt-20"> {/* Aumenta padding-top para el espacio del título */}
-          <h1 className="text-4xl text-white font-bold mb-4">Ignacio Socias</h1> {/* Agrega margen inferior al título si es necesario */}
-          <div className="w-full h-24 bg-white/30 rounded-md border border-gray-300 backdrop-blur-md"></div> {/* Ajusta la altura de este elemento según sea necesario */}
+        <div className="w-2/3 h-56 flex flex-col items-start justify-between pl-28 pt-16 z-10">
+        <h1 className="text-6xl text-white font-semibold mb-4" style={{ fontSize: '68px', lineHeight: '1.2' }}>Ignacio Socías</h1>
+          <div className="w-full h-36 bg-white/30 rounded-md border border-gray-300 backdrop-blur-md"></div>
         </div>
       </div> 
       
-       {/* Contenedor para los botones */}
-       <div className="w-full h-8 flex justify-center bg-lefter">
-          {/* Envoltorio de botones con ancho máximo y centrado */}
+      {/* Contenedor para los botones */}
+      <div className="w-full h-8 flex justify-center bg-lefter">
         <div className="flex" style={{ maxWidth: '600px' }}>
           <button 
             onClick={() => setActiveTab('reseñas')}
@@ -50,8 +69,6 @@ export default function Profile() {
           </button>
         </div>
       </div>
-      
-</main>
+    </main>
   );
 }
-
