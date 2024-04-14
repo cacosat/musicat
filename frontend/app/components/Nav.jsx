@@ -14,8 +14,8 @@ export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
 
     return <>
-        <div className={`fixed top-0 left-0 w-[180px] h-screen bg-lefter`}>
-            <nav className={`flex flex-col justify-between w-fit px-8 py-9 gap-4 h-screen items-start text-white shadow-xl`}>
+        <div className={`fixed top-0 left-0 w-[180px] h-screen bg-lefter shadow-custom-horizontal`}>
+            <nav className={`flex flex-col justify-between px-8 py-9 gap-4 h-screen items-start text-white`}>
                 <div className="flex flex-col gap-2">
                     <button onClick={() => setIsOpen(!isOpen)} className='text-xl'>
                         <Image

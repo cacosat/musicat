@@ -20,12 +20,12 @@ export default function Profile() {
         />
         
         {/* Div de degradado */}
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-50 z-5"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/50 to-black/80 z-5"></div>
 
         {/* SearchBar debe permanecer en la parte superior */}
         <div className="absolute inset-x-0 top-0 mx-auto my-8 px-4 w-full flex justify-center z-10">
         {/* Pasa la prop fullWidth con el valor true */}
-        <SearchBar name="barra de búsqueda" fullWidth={true} />
+        <SearchBar name="barra de búsqueda" />
       </div>
 
         {/* Otros elementos */}
@@ -51,7 +51,7 @@ export default function Profile() {
         <div className="flex" style={{ maxWidth: '600px' }}>
           <button 
             onClick={() => setActiveTab('reseñas')}
-            className={`w-1/3 h-full text-center ${activeTab === 'reseñas' ? 'text-white font-semibold bg-background' : 'text-custom-gray-200 font-light bg-lefter'} px-10 focus:outline-none`}
+            className={`w-fit h-full text-center ${activeTab === 'reseñas' ? 'text-white font-semibold bg-background' : 'text-custom-gray-200 font-light bg-lefter'} px-10 focus:outline-none`}
           >
             Reseñas
           </button>
