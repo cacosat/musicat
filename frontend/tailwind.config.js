@@ -44,6 +44,10 @@ module.exports = {
         "custom-gray-400": "#262626",
         "custom-gray-500": "#171717",
       },
+      boxShadow: {
+        'custom-vertical': '0px 4px 10px 0px rgba(0,0,0,0.5)',
+        'custom-horizontal': '4px 0px 10px 0px rgba(0,0,0,0.5)',
+      },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",

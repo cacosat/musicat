@@ -6,11 +6,8 @@ import { Button } from "@/components/ui/button";
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="absolute inset-x-0 top-0 ml-12 my-8 flex justify-center">
-        <SearchBar name='barra de búsqueda'>
-          <Button variant="outline" type="submit">Subscribe</Button>
-          <Button variant="outline" type="submit">Subscribe</Button>
-        </SearchBar>
+      <div className="absolute inset-x-0 top-0 my-8 ml-[180px] flex justify-center">
+        <SearchBar name='Barra de búsqueda'></SearchBar>
       </div>
       <div className="flex gap-2">
         <Link href="/music" className="flex items-center justify-center px-4 py-2 border text-sm font-medium rounded-md text-white">

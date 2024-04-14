@@ -4,14 +4,13 @@ import { searchIcon } from '@/assets/icons/search_icon.svg'
 import Image from "next/image"
 import { cn } from "@/lib/utils"
 
-const Input = React.forwardRef(({ className, type, ...props }, ref) => {
+const Input = React.forwardRef(({ type, ...props }, ref) => {
   return (
-    <div className={`flex h-auto w-full rounded-md bg-lefter px-3 py-2 text-base ${className}`}>
+    <div className={`grow flex gap-2 justify-between h-auto w-full rounded-md bg-lefter px-3 py-2 text-base `}>
       <input
         type={type}
         className={cn(
-          "bg-lefter text-custom-gray-200 placeholder:text-custom-gray-300",
-          className // Asegúrate de que esta línea esté incluida para aplicar estilos adicionales
+          "grow bg-lefter text-custom-gray-200 placeholder:text-custom-gray-300",
         )}
         ref={ref}
         {...props} />
