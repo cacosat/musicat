@@ -9,7 +9,7 @@ export default function Profile() {
   const [activeTab, setActiveTab] = useState('reseñas');
   return (
     <main className="flex flex-col min-h-screen w-full">
-    <div className="flex items-center justify-center w-full relative" style={{ padding: '0 10%', height: '350px' }}>
+      <div className="flex items-center justify-center w-full relative" style={{ paddingTop: '6%', paddingRight: '10%', paddingBottom: '2%', paddingLeft: '10%', height: '350px' }}>
         {/* Imagen de fondo para el rectángulo azul */}
         <Image
           src="/Santiago.jpeg" // Asegúrate de cambiar la ruta a la imagen que desees usar
@@ -29,7 +29,7 @@ export default function Profile() {
       </div>
 
          {/* Nuevo contenedor para alinear la imagen de perfil a la izquierda y el nombre y rectángulo a la derecha */}
-         <div className="flex items-start justify-between w-full mx-auto pt-16 gap-x-24 z-10">
+         <div className="flex items-end justify-between w-full mx-auto gap-x-36 z-10 h-full">
   {/* Contenedor para la imagen circular de perfil */}
   <div className="flex-shrink-0 w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-56 lg:h-56"> {/* Agrega un margin-bottom que sea el padding deseado */}
     <div className="relative pt-[100%] overflow-hidden rounded-full">
@@ -45,12 +45,12 @@ export default function Profile() {
   </div>
 
   {/* Contenedor para el nombre y rectángulo borroso, alineados a la derecha */}
-  <div className="flex-grow w-full flex flex-col justify-between">
+  <div className="flex-1 flex flex-col justify-end h-full">
     {/* Nombre del usuario */}
-    <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white font-semibold mb-4">Ignacio Socías</h1>
+    <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white font-semibold mb-4 mt-8">Ignacio Socías</h1>
     
     {/* Rectángulo borroso */}
-    <div className="bg-white/30 rounded-md border border-gray-300 backdrop-blur-md p-8 w-full">
+    <div className="bg-white/30 rounded-md border border-gray-300 backdrop-blur-md py-8 w-full h-full">
     </div>
   </div>
 </div>
