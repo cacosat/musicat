@@ -29,7 +29,7 @@ export default function Profile() {
       </div>
 
          {/* Nuevo contenedor para alinear la imagen de perfil a la izquierda y el nombre y rectángulo a la derecha */}
-         <div className="flex items-start justify-between w-full max-w-6xl mx-auto pt-16 gap-x-12 z-10">
+         <div className="flex items-start justify-between w-full mx-auto pt-16 gap-x-24 z-10">
   {/* Contenedor para la imagen circular de perfil */}
   <div className="flex-shrink-0 w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-56 lg:h-56"> {/* Agrega un margin-bottom que sea el padding deseado */}
     <div className="relative pt-[100%] overflow-hidden rounded-full">
@@ -45,13 +45,13 @@ export default function Profile() {
   </div>
 
   {/* Contenedor para el nombre y rectángulo borroso, alineados a la derecha */}
-  <div className="flex-grow flex flex-col justify-between">
-  {/* Nombre del usuario */}
-  <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white font-semibold mb-4">Ignacio Socías</h1>
-  
-  {/* Rectángulo borroso */}
-  <div className="bg-white/30 rounded-md border border-gray-300 backdrop-blur-md p-8 max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl">
-  </div>
+  <div className="flex-grow w-full flex flex-col justify-between">
+    {/* Nombre del usuario */}
+    <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white font-semibold mb-4">Ignacio Socías</h1>
+    
+    {/* Rectángulo borroso */}
+    <div className="bg-white/30 rounded-md border border-gray-300 backdrop-blur-md p-8 w-full">
+    </div>
   </div>
 </div>
 </div>
