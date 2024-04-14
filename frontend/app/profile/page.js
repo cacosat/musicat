@@ -9,7 +9,7 @@ export default function Profile() {
   const [activeTab, setActiveTab] = useState('reseñas');
   return (
     <main className="flex flex-col min-h-screen w-full">
-      <div className="flex items-center justify-between w-full relative" style={{ padding: '0 15%', height: '350px' }}>
+    <div className="flex items-center justify-center w-full relative" style={{ padding: '0 10%', height: '350px' }}>
         {/* Imagen de fondo para el rectángulo azul */}
         <Image
           src="/Santiago.jpeg" // Asegúrate de cambiar la ruta a la imagen que desees usar
@@ -28,23 +28,33 @@ export default function Profile() {
         <SearchBar name="barra de búsqueda" />
       </div>
 
-        {/* Otros elementos */}
-        <div className="flex items-start justify-start w-1/3 pt-16 z-10">
-          <div className="w-56 h-56 rounded-full overflow-hidden relative">
-            <Image
-              src="/Socias.jpeg"
-              alt="Imagen de perfil"
-              layout="fill"
-              objectFit="cover"
-            />
-          </div>
-        </div>
-        
-        <div className="w-2/3 h-56 flex flex-col items-start justify-between pl-28 pt-16 z-10">
-        <h1 className="text-6xl text-white font-semibold mb-4" style={{ fontSize: '68px', lineHeight: '1.2' }}>Ignacio Socías</h1>
-          <div className="w-full h-36 bg-white/30 rounded-md border border-gray-300 backdrop-blur-md"></div>
-        </div>
-      </div> 
+         {/* Nuevo contenedor para alinear la imagen de perfil a la izquierda y el nombre y rectángulo a la derecha */}
+         <div className="flex items-start justify-between w-full max-w-6xl mx-auto pt-16 gap-x-12 z-10">
+  {/* Contenedor para la imagen circular de perfil */}
+  <div className="flex-shrink-0 w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-56 lg:h-56"> {/* Agrega un margin-bottom que sea el padding deseado */}
+    <div className="relative pt-[100%] overflow-hidden rounded-full">
+      {/* Imagen de perfil */}
+      <Image
+        src="/Socias.jpeg"
+        alt="Imagen de perfil"
+        layout="fill"
+        objectFit="cover"
+        className="absolute top-0 left-0 w-full h-full object-cover rounded-full"
+      />
+    </div>
+  </div>
+
+  {/* Contenedor para el nombre y rectángulo borroso, alineados a la derecha */}
+  <div className="flex-grow flex flex-col justify-between">
+  {/* Nombre del usuario */}
+  <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white font-semibold mb-4">Ignacio Socías</h1>
+  
+  {/* Rectángulo borroso */}
+  <div className="bg-white/30 rounded-md border border-gray-300 backdrop-blur-md p-8 max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl">
+  </div>
+  </div>
+</div>
+</div>
       
       {/* Contenedor para los botones */}
       <div className="w-full h-8 flex justify-center bg-lefter">
