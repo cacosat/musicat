@@ -4,7 +4,8 @@ import { useState } from 'react';
 import SearchBar from "../components/searchBox";
 import SearchProvider from "../components/searchProvider";
 import SearchOverlay from "../components/searchOverlay";
-import Image from 'next/image'; // Asegúrate de que está importado
+import Image from 'next/image'; 
+import Card from '../components/Card';
 
 export default function Profile() {
   // Agrega un nuevo estado para rastrear el botón activo
@@ -52,7 +53,7 @@ export default function Profile() {
         <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white font-semibold mb-4 mt-8">Ignacio Socías</h1>
         
         {/* Rectángulo borroso */}
-        <div className="bg-white/30 rounded-md border border-gray-300 backdrop-blur-md py-8 w-full h-full">
+        <div className="bg-white/10 rounded-md border border-gray-500 backdrop-blur-md py-8 w-full h-full">
         </div>
           </div>
         </div>
@@ -80,6 +81,10 @@ export default function Profile() {
                 Guardado
               </button>
             </div>
+          </div>
+         {/* Añadir Card aquí si quieres que esté centrado y con padding */}
+         <div className="pt-10 px-10 w-full flex justify-center items-center">
+            <Card />
           </div>
         </main>
       </SearchOverlay>
