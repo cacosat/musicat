@@ -3,14 +3,15 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input"
+import Image from "next/image";
 import { SearchQueryContext } from "../context";
 
 export default function SearchBar({ children, placeholder }) {
-    const {query, handleQueryChange} = useContext(SearchQueryContext)
+    const {query, showSearchResults, handleQueryChange} = useContext(SearchQueryContext)
 
-    useEffect(() => {
-        console.log(query);
-    }, [query]);
+    // useEffect(() => {
+    //     console.log(query);
+    // }, [query]);
 
 
     return (
@@ -22,9 +23,7 @@ export default function SearchBar({ children, placeholder }) {
                     onChange={handleQueryChange}
                 />
             </div>
-            <div className="flex gap-2">
-                {children}
-            </div>
+            {children}
         </div>
     );
 }

@@ -29,7 +29,6 @@ export default function Profile() {
             {/* SearchBar debe permanecer en la parte superior */}
             <div className="absolute inset-x-0 top-0 mx-auto my-8 px-4 w-full flex justify-center z-10">
             {/* Pasa la prop fullWidth con el valor true */}
-            <SearchBar placeholder="Barra de búsqueda" />
           </div>
              {/* Nuevo contenedor para alinear la imagen de perfil a la izquierda y el nombre y rectángulo a la derecha */}
              <div className="flex items-end justify-between w-full mx-auto gap-x-36 z-10 h-full">
