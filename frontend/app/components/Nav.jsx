@@ -6,6 +6,7 @@ import Link from "next/link";
 import Image from "next/image";
 import homeIcon from '../../assets/icons/home.png'
 import rightArrow from '@/assets/icons/rightArrow.png'
+import search from '@/assets/icons/search.png'
 import user from '@/assets/icons/user.png'
 import settings from '@/assets/icons/settings.png'
 
@@ -26,6 +27,15 @@ export default function Navbar() {
                             className={`${isOpen ? 'rotate-180' : ''} rotate-0 transition-all`}
                         />
                     </button>
+                    <Link href="/" className="flex gap-2 hover:bg-[#FFFFFF1A] p-2 rounded-xl">
+                        <Image
+                            src={search}
+                            height={24}
+                            width={24}
+                            alt="search"
+                        />
+                        <p className=''>Search</p>
+                    </Link>
                     <Link href="/" className="flex gap-2 hover:bg-[#FFFFFF1A] p-2 rounded-xl">
                         <Image
                             src={homeIcon}
