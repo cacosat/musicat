@@ -13,21 +13,20 @@ import settings from '@/assets/icons/settings.png'
 export default function Navbar() {
     // helper funct + hooks
     const [isOpen, setIsOpen] = useState(false);
+    const handleSearch = (e) => {
+        e.preventDefault();
+        // handle click on search:
+        // show search overlay
+    }
 
     return <>
         <div className={`fixed top-0 left-0 w-[180px] h-screen bg-lefter shadow-custom-horizontal`}>
             <nav className={`flex flex-col justify-between px-8 py-9 gap-4 h-screen items-start text-white`}>
                 <div className="flex flex-col gap-2">
                     <button onClick={() => setIsOpen(!isOpen)} className='text-xl'>
-                        <Image
-                            src={rightArrow}
-                            height={24}
-                            width={24}
-                            alt="open nav bar icon"
-                            className={`${isOpen ? 'rotate-180' : ''} rotate-0 transition-all`}
-                        />
+                        Icono
                     </button>
-                    <Link href="/" className="flex gap-2 hover:bg-[#FFFFFF1A] p-2 rounded-xl">
+                    <Link href="/" className="flex gap-2 hover:bg-[#FFFFFF1A] p-2 rounded-xl" onClick={handleSearch}>
                         <Image
                             src={search}
                             height={24}
