@@ -47,6 +47,8 @@ module.exports = {
       boxShadow: {
         'custom-vertical': '0px 4px 10px 0px rgba(0,0,0,0.5)',
         'custom-horizontal': '4px 0px 10px 0px rgba(0,0,0,0.5)',
+        'custom-inset-vertical': 'inset 0px 4px 10px 0px rgba(0,0,0,0.5)',
+        'custom-inset-horizontal': 'inset 4px 0px 10px 0px rgba(0,0,0,0.5)',
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
