@@ -3,7 +3,7 @@
 import Link from "next/link";
 import SearchOverlay from "./components/searchOverlay";
 import SearchProvider from "./components/searchProvider";
-import CardOutline from "./components/cardOutline";
+import GradientOutline from "./components/gradientOutline";
 
 export default function Home() {
 
@@ -22,7 +22,7 @@ export default function Home() {
 
 
             {/* 
-              Este componente, cardOutline, siempre se tiene que usar envuelto por un div
+              Este componente, GradientOutline, siempre se tiene que usar envuelto por un div
               que decide el tamaño y puede recibir tres valores: px, py, bg
               1. px: padding horizontal, se debe ingresar el número en string, ej.: '12'
               2. py: padding vertical
@@ -30,13 +30,13 @@ export default function Home() {
               o se puede ingresar un color (solo acepta colores tailwind o los nuestros, ej.: 'red-500', 'cards')
             */}
             <div className="w-56 h-56">
-              <CardOutline bg="url('/Santiago.jpeg')" px='16' py='16'>
+              <GradientOutline bg="url('/Santiago.jpeg')" px='16' py='16'>
                 <div className="w-fit h-fit text-white">
-                  <CardOutline bg="cards">
-                    paddingdfkjalskj
-                  </CardOutline>
+                  <GradientOutline bg="cards">
+                    paddfkjalskj
+                  </GradientOutline>
                 </div>
-              </CardOutline>
+              </GradientOutline>
             </div>
 
             
