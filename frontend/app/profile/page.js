@@ -82,7 +82,7 @@ export default function Profile() {
             </div>
           </div>
          {/* Añadir Card aquí si quieres que esté centrado y con padding */}
-         <div className="pt-10 px-10 w-full flex justify-center items-center">
+         <div className="w-2/3 h-1/3 flex flex-col items-center justify-center">
             <Card />
           </div>
         </main>
