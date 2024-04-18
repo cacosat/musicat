@@ -24,7 +24,7 @@ export default function GradientOutline({ bg = 'lefter', px = 16, py = 16, child
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
                 }}>
-                <div className={`relative flex items-center justify-center w-full h-full rounded-lg backdrop-blur-[2px] ${bg.includes('url') ? 'bg-black/50' : ''}`}
+                <div className={`relative flex items-center justify-center w-full h-full rounded-lg backdrop-blur-[8px] ${bg.includes('url') ? 'bg-black/60 ' : ''}`}
                     style={{
                         paddingLeft: `${px}px`,
                         paddingRight: `${px}px`,

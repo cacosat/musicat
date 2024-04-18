@@ -5,7 +5,7 @@ import {useState, useEffect, useContext} from 'react';
 import SearchBar from "./searchBox";
 import { SearchQueryContext } from "../context";
 
-export default function searchOverlay({children}) {
+export default function searchOverlay({children, searchBar = false}) {
     const [overlayVisible, setOverlayVisible] = useState(false);
 
     const { query, showSearchResults } = useContext(SearchQueryContext)
@@ -19,7 +19,7 @@ export default function searchOverlay({children}) {
     return (
         <>
             <div className={`mx-auto `} id="searchOverlay">
-                <div className="absolute z-[100] inset-x-0 top-0 my-8 ml-[180px] flex justify-center">
+                <div className={` ${searchBar ? 'absolute z-[100] inset-x-0 top-0 my-8 ml-[180px] flex justify-center' : 'hidden'}`}>
                     <SearchBar placeholder='Barra de búsqueda'/>
                 </div>
                 <div className={` transition-all`}> {/* ${overlayDynamicClass} */}
