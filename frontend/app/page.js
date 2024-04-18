@@ -32,7 +32,7 @@ export default function Home() {
             <div className="w-56 h-56">
               <GradientOutline bg="url('/Santiago.jpeg')" px='16' py='16'>
                 <div className="w-fit h-fit text-white">
-                  <GradientOutline bg="cards">
+                  <GradientOutline bg="lefter">
                     paddfkjalskj
                   </GradientOutline>
                 </div>
