@@ -15,15 +15,52 @@ export default function Profile() {
   const userName = 'Ignacio Socías'
   const aboutCardDescription = 'Siempre me ha gustado especialmente el rock, fanatico de la banda chilena... humorista, Santiago de Chile.'
 
+  // Todo: función para retornar el contenido según el activeTab
+  function activeTabContent(activeTab) {
+    if (activeTab === 'reseñas') {
+      return <>
+        <div className="w-full h-full flex flex-col items-center gap-8 py-8 px-4">
+          <div className="max-w-[900px] flex flex-col items-center justify-center overflow-hidden shadow-custom-vertical ">
+            <Card />
+          </div>
+          <div className="max-w-[900px] h-fit flex flex-col items-center justify-center overflow-hidden shadow-custom-vertical ">
+            <Card />
+          </div>
+          <div className="max-w-[900px] h-fit flex flex-col items-center justify-center overflow-hidden shadow-custom-vertical ">
+            <Card />
+          </div>
+          <div className="max-w-[900px] h-fit flex flex-col items-center justify-center overflow-hidden shadow-custom-vertical ">
+            <Card />
+          </div>
+          <div className="max-w-[900px] h-fit flex flex-col items-center justify-center overflow-hidden shadow-custom-vertical ">
+            <Card />
+          </div>
+        </div>
+      </>
+    } else if (activeTab === 'ratings') {
+      return <>
+        <div className="w-full h-full flex justify-center text-white ">
+          Ratings
+        </div>
+      </>
+    } else if (activeTab === 'guardado') {
+      return <>
+        <div className="w-full h-full flex justify-center text-white ">
+          Guardado
+        </div>
+      </>
+    }
+  }
+
   return (
     <SearchProvider>
       <SearchOverlay searchBar={false}>
-        <main className="flex flex-col h-screen w-full">
+        <main className="flex flex-col w-full overflow-x-hidden">
           <div className="flex items-center justify-center w-full relative p-12">
             {/* Imagen de fondo para el rectángulo azul */}
             <Image
               src={bannerTestImg} // Asegúrate de cambiar la ruta a la imagen que desees usar
-              alt="Fondo azul"
+              alt="Banner"
               layout="fill"
               objectFit="cover"
               className="z-0" // Mantiene la imagen en el fondo
@@ -60,9 +97,9 @@ export default function Profile() {
             </div>
           </div>
         
-          {/* Contenedor para los botones */}
-          <div className="w-full h-8 flex justify-center bg-lefter">
-            <div className="flex" style={{ maxWidth: '600px' }}>
+          {/* Contenedor para los tabs */}
+          <div className="w-full h-12 flex justify-center bg-lefter">
+            <div className="sticky top-0 flex">
               <button
                 onClick={() => setActiveTab('reseñas')}
                 className={`w-fit h-full text-center ${activeTab === 'reseñas' ? 'text-white font-semibold bg-background' : 'text-custom-gray-200 font-light bg-lefter'} px-10 focus:outline-none`}
@@ -71,24 +108,23 @@ export default function Profile() {
               </button>
               <button
                 onClick={() => setActiveTab('ratings')}
-                className={`w-1/3 h-full text-center ${activeTab === 'ratings' ? 'text-white font-semibold bg-background' : 'text-custom-gray-200 font-light bg-lefter'} px-10 focus:outline-none`}
+                className={`w-fit h-full text-center ${activeTab === 'ratings' ? 'text-white font-semibold bg-background' : 'text-custom-gray-200 font-light bg-lefter'} px-10 focus:outline-none`}
               >
                 Ratings
               </button>
               <button
                 onClick={() => setActiveTab('guardado')}
-                className={`w-1/3 h-full text-center ${activeTab === 'guardado' ? 'text-white font-semibold bg-background' : 'text-custom-gray-200 font-light bg-lefter'} px-10 focus:outline-none`}
+                className={`w-fit h-full text-center ${activeTab === 'guardado' ? 'text-white font-semibold bg-background' : 'text-custom-gray-200 font-light bg-lefter'} px-10 focus:outline-none`}
               >
                 Guardado
               </button>
             </div>
           </div>
-          {/* Añadir Card aquí si quieres que esté centrado y con padding */}
-          <div className="w-full h-full flex flex-col items-center py-8">
-            <div className="max-w-[900px]  flex flex-col items-center justify-center overflow-hidden">
-              <Card />
-            </div>
+
+          <div>
+            {activeTabContent(activeTab)}
           </div>
+          
         </main>
       </SearchOverlay>
     </SearchProvider>
