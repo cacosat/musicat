@@ -11,66 +11,95 @@ import GradientOutline from "./gradientOutline";
 
     
 export default function Component() {
+  const albumCover = "/We are the grand.jpeg";
+  const profilePicture = "/Socias.jpeg?height=40&width=40";
+  const userName = "Ignacio Socias";
+  const userTotalReviews = "30";
+  const userMeanReview = "3.9";
+  const lastUpdateRating = "Hace 2 semanas";
+  const reviewTitle = "Título de la reseña";
+  const reviewContent = "Lorem ipsum dolor sit amet consectetur. Consectetur habitant fringilla erat morbi enim tempor eros ultricies morbi."
+
+  // TODO: lógica para el manejo de los botones
+
   return (
-    <GradientOutline bg="url('/We are the grand.jpeg')">
+    <GradientOutline px={32} py={32} bg="url('/We are the grand.jpeg')" className="">
       {/* Contenido de la tarjeta */}
-      <div className="relative z-10 p-2 space-y-4">
-        <div className="flex">
-          <div className="w-1/3 px-2 py-1"> 
-            <Image
-              alt="Banda"
-              className="w-full h-full object-cover rounded-lg"
-              height={255}
-              src="/We are the grand.jpeg"
-              layout="responsive"
-              width={219}
-            />
-          </div>
-          <div className="w-2/3 p-2">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center space-x-2">
-                <Avatar>
-                  <AvatarImage alt="Imagen de perfil" src="/Socias.jpeg?height=40&width=40" />
-                </Avatar>
-                <div>
-                  <div className="text-white font-semibold">Ignacio Socias</div>
-                  <div className="text-gray-400 text-sm">30 Reseñas - 3.9 promedio</div>
+      <div className="flex justify-center items-center gap-8">
+
+        <div className=" max-w-[255px] max-h-[255px] w-full h-full "> 
+          {/* ALbum cover */}
+          <Image
+            alt="Album Cover"
+            className="min-w-[125px] min-h-[125px] object-cover rounded-lg"
+            height={255}
+            src={albumCover}
+            width={255}
+          />
+        </div>
+
+        <div className="flex flex-col gap-6 items-start"> {/* Acá puede ser mejor dejar justify-between */}
+          {/* Contenedor avatar icon, nombre, stats y estrellas */}
+          <div className="w-full flex items-center justify-between">
+            <div className="flex items-center gap-4">
+              <Avatar>
+                <AvatarImage alt="Imagen de perfil" src={profilePicture} />
+              </Avatar>
+              <div>
+                <div className="text-xl text-white font-semibold">
+                  {userName}
+                </div>
+                <div className="text-sm text-gray-400">
+                  {`${userTotalReviews} Reseñas - ${userMeanReview} promedio`}
                 </div>
               </div>
-              <div className="flex items-center">
-                <StarIcon className="text-accent-green-light" />
-                <StarIcon className="text-accent-green-light" />
-                <StarIcon className="text-accent-green-light" />
-                <StarIcon className="text-accent-green-light" />
-                <StarBorder className="text-accent-green-light" />
-                <span className="text-white ml-1">4.0</span>
+            </div>
+            <div className="flex flex-col items-end">
+              <div className="flex items-center gap-2 text-accent-green-light">
+                <div className="flex">
+                  <StarIcon className="" />
+                  <StarIcon className="" />
+                  <StarIcon className="" />
+                  <StarIcon className="" />
+                  <StarBorder className="" />
+                </div>
+                <p className="text-xl font-semibold">4.0</p>
+              </div>
+              <div className="text-sm text-gray-400">
+                {lastUpdateRating}
               </div>
             </div>
-            <div>
-              <div className="text-lg text-white font-bold mt-4">Título de la Reseña</div>
-              <p className="text-gray-300 text-sm">
-                Lorem ipsum dolor sit amet consectetur. Consectetur habitant fringilla erat morbi enim tempor eros
-                ultricies morbi.
-              </p>
+          </div>
+
+          <div className="flex flex-col gap-2 items-start text-white">
+            <div className="text-xl font-semibold ">
+              {reviewTitle}
             </div>
-            <div className="flex items-center justify-between mt-3">
-              <Button className="text-white" variant="ghost">
-                Ver más
+            <p className="font-light">
+              {reviewContent}
+            </p>
+            <button className=" self-end text-accent-green-light underline">
+              Ver más
+            </button>
+          </div>
+
+          <div className="w-full flex justify-end">
+            <div className="flex items-center">
+              <Button className="text-accent-green-light gap-2" variant="ghost">
+                <ThumbsUp className="text-accent-green-light" /> 
+                <p>12</p>
               </Button>
-              <div className="flex items-center space-x-4">
-                <Button className="text-accent-green-light" variant="ghost">
-                  <ThumbsUp className="text-accent-green-light" /> 12
-                </Button>
-                <Button className="text-gray-400" variant="ghost">
-                  <ThumbsDown className="text-gray-400" /> 8
-                </Button>
-                <Button className="text-gray-400" variant="ghost">
-                  <Comments className="text-gray-400" /> 2
-                </Button>
-                <Button className="text-gray-400" variant="ghost">
-                  <Share className="text-gray-400" />
-                </Button>
-              </div>
+              <Button className="text-gray-400 gap-2" variant="ghost">
+                <ThumbsDown className="text-gray-400" /> 
+                <p>8</p>
+              </Button>
+              <Button className="text-gray-400 gap-2" variant="ghost">
+                <Comments className="text-gray-400" /> 
+                <p>2</p>
+              </Button>
+              <Button className="text-gray-400 gap-2" variant="ghost">
+                <Share className="text-gray-400" />
+              </Button>
             </div>
           </div>
         </div>
@@ -88,7 +117,7 @@ function Comments(props) {
     className="mr-1"
     xmlns="http://www.w3.org/2000/svg">
     <path d="M18.5225 0.5H2.52246C1.42246 0.5 0.532461 1.4 0.532461 2.5L0.522461 20.5L4.52246 16.5H18.5225C19.6225 16.5 20.5225 15.6 20.5225 14.5V2.5C20.5225 1.4 19.6225 0.5 18.5225 0.5ZM5.52246 7.5H15.5225C16.0725 7.5 16.5225 7.95 16.5225 8.5C16.5225 9.05 16.0725 9.5 15.5225 9.5H5.52246C4.97246 9.5 4.52246 9.05 4.52246 8.5C4.52246 7.95 4.97246 7.5 5.52246 7.5ZM11.5225 12.5H5.52246C4.97246 12.5 4.52246 12.05 4.52246 11.5C4.52246 10.95 4.97246 10.5 5.52246 10.5H11.5225C12.0725 10.5 12.5225 10.95 12.5225 11.5C12.5225 12.05 12.0725 12.5 11.5225 12.5ZM15.5225 6.5H5.52246C4.97246 6.5 4.52246 6.05 4.52246 5.5C4.52246 4.95 4.97246 4.5 5.52246 4.5H15.5225C16.0725 4.5 16.5225 4.95 16.5225 5.5C16.5225 6.05 16.0725 6.5 15.5225 6.5Z" fill="#B3B3B3"/>
-    <path d="M18.5225 0.5H2.52246C1.42246 0.5 0.532461 1.4 0.532461 2.5L0.522461 20.5L4.52246 16.5H18.5225C19.6225 16.5 20.5225 15.6 20.5225 14.5V2.5C20.5225 1.4 19.6225 0.5 18.5225 0.5ZM5.52246 7.5H15.5225C16.0725 7.5 16.5225 7.95 16.5225 8.5C16.5225 9.05 16.0725 9.5 15.5225 9.5H5.52246C4.97246 9.5 4.52246 9.05 4.52246 8.5C4.52246 7.95 4.97246 7.5 5.52246 7.5ZM11.5225 12.5H5.52246C4.97246 12.5 4.52246 12.05 4.52246 11.5C4.52246 10.95 4.97246 10.5 5.52246 10.5H11.5225C12.0725 10.5 12.5225 10.95 12.5225 11.5C12.5225 12.05 12.0725 12.5 11.5225 12.5ZM15.5225 6.5H5.52246C4.97246 6.5 4.52246 6.05 4.52246 5.5C4.52246 4.95 4.97246 4.5 5.52246 4.5H15.5225C16.0725 4.5 16.5225 4.95 16.5225 5.5C16.5225 6.05 16.0725 6.5 15.5225 6.5Z" fill="black" fill-opacity="0.2"/>
+    <path d="M18.5225 0.5H2.52246C1.42246 0.5 0.532461 1.4 0.532461 2.5L0.522461 20.5L4.52246 16.5H18.5225C19.6225 16.5 20.5225 15.6 20.5225 14.5V2.5C20.5225 1.4 19.6225 0.5 18.5225 0.5ZM5.52246 7.5H15.5225C16.0725 7.5 16.5225 7.95 16.5225 8.5C16.5225 9.05 16.0725 9.5 15.5225 9.5H5.52246C4.97246 9.5 4.52246 9.05 4.52246 8.5C4.52246 7.95 4.97246 7.5 5.52246 7.5ZM11.5225 12.5H5.52246C4.97246 12.5 4.52246 12.05 4.52246 11.5C4.52246 10.95 4.97246 10.5 5.52246 10.5H11.5225C12.0725 10.5 12.5225 10.95 12.5225 11.5C12.5225 12.05 12.0725 12.5 11.5225 12.5ZM15.5225 6.5H5.52246C4.97246 6.5 4.52246 6.05 4.52246 5.5C4.52246 4.95 4.97246 4.5 5.52246 4.5H15.5225C16.0725 4.5 16.5225 4.95 16.5225 5.5C16.5225 6.05 16.0725 6.5 15.5225 6.5Z" fill="black" fillOpacity="0.2"/>
     </svg>
     
   )
@@ -103,7 +132,7 @@ function Share(props) {
     fill="none" 
     xmlns="http://www.w3.org/2000/svg">
     <path d="M15.5225 14.58C14.7625 14.58 14.0825 14.88 13.5625 15.35L6.43246 11.2C6.48246 10.97 6.52246 10.74 6.52246 10.5C6.52246 10.26 6.48246 10.03 6.43246 9.8L13.4825 5.69C14.0225 6.19 14.7325 6.5 15.5225 6.5C17.1825 6.5 18.5225 5.16 18.5225 3.5C18.5225 1.84 17.1825 0.5 15.5225 0.5C13.8625 0.5 12.5225 1.84 12.5225 3.5C12.5225 3.74 12.5625 3.97 12.6125 4.2L5.56246 8.31C5.02246 7.81 4.31246 7.5 3.52246 7.5C1.86246 7.5 0.522461 8.84 0.522461 10.5C0.522461 12.16 1.86246 13.5 3.52246 13.5C4.31246 13.5 5.02246 13.19 5.56246 12.69L12.6825 16.85C12.6325 17.06 12.6025 17.28 12.6025 17.5C12.6025 19.11 13.9125 20.42 15.5225 20.42C17.1325 20.42 18.4425 19.11 18.4425 17.5C18.4425 15.89 17.1325 14.58 15.5225 14.58Z" fill="#B3B3B3"/>
-    <path d="M15.5225 14.58C14.7625 14.58 14.0825 14.88 13.5625 15.35L6.43246 11.2C6.48246 10.97 6.52246 10.74 6.52246 10.5C6.52246 10.26 6.48246 10.03 6.43246 9.8L13.4825 5.69C14.0225 6.19 14.7325 6.5 15.5225 6.5C17.1825 6.5 18.5225 5.16 18.5225 3.5C18.5225 1.84 17.1825 0.5 15.5225 0.5C13.8625 0.5 12.5225 1.84 12.5225 3.5C12.5225 3.74 12.5625 3.97 12.6125 4.2L5.56246 8.31C5.02246 7.81 4.31246 7.5 3.52246 7.5C1.86246 7.5 0.522461 8.84 0.522461 10.5C0.522461 12.16 1.86246 13.5 3.52246 13.5C4.31246 13.5 5.02246 13.19 5.56246 12.69L12.6825 16.85C12.6325 17.06 12.6025 17.28 12.6025 17.5C12.6025 19.11 13.9125 20.42 15.5225 20.42C17.1325 20.42 18.4425 19.11 18.4425 17.5C18.4425 15.89 17.1325 14.58 15.5225 14.58Z" fill="black" fill-opacity="0.2"/>
+    <path d="M15.5225 14.58C14.7625 14.58 14.0825 14.88 13.5625 15.35L6.43246 11.2C6.48246 10.97 6.52246 10.74 6.52246 10.5C6.52246 10.26 6.48246 10.03 6.43246 9.8L13.4825 5.69C14.0225 6.19 14.7325 6.5 15.5225 6.5C17.1825 6.5 18.5225 5.16 18.5225 3.5C18.5225 1.84 17.1825 0.5 15.5225 0.5C13.8625 0.5 12.5225 1.84 12.5225 3.5C12.5225 3.74 12.5625 3.97 12.6125 4.2L5.56246 8.31C5.02246 7.81 4.31246 7.5 3.52246 7.5C1.86246 7.5 0.522461 8.84 0.522461 10.5C0.522461 12.16 1.86246 13.5 3.52246 13.5C4.31246 13.5 5.02246 13.19 5.56246 12.69L12.6825 16.85C12.6325 17.06 12.6025 17.28 12.6025 17.5C12.6025 19.11 13.9125 20.42 15.5225 20.42C17.1325 20.42 18.4425 19.11 18.4425 17.5C18.4425 15.89 17.1325 14.58 15.5225 14.58Z" fill="black" fillOpacity="0.2"/>
     </svg>
   )
 }
@@ -146,7 +175,7 @@ function ThumbsDown(props) {
     fill="none" 
     xmlns="http://www.w3.org/2000/svg">
     <path d="M14.5225 0.5H5.52246C4.69246 0.5 3.98246 1 3.68246 1.72L0.662461 8.77C0.572461 9 0.522461 9.24 0.522461 9.5V11.5C0.522461 12.6 1.42246 13.5 2.52246 13.5H8.83246L7.88246 18.07L7.85246 18.39C7.85246 18.8 8.02246 19.18 8.29246 19.45L9.35246 20.5L15.9425 13.91C16.3025 13.55 16.5225 13.05 16.5225 12.5V2.5C16.5225 1.4 15.6225 0.5 14.5225 0.5ZM18.5225 0.5V12.5H22.5225V0.5H18.5225Z" fill="#B3B3B3"/>
-    <path d="M14.5225 0.5H5.52246C4.69246 0.5 3.98246 1 3.68246 1.72L0.662461 8.77C0.572461 9 0.522461 9.24 0.522461 9.5V11.5C0.522461 12.6 1.42246 13.5 2.52246 13.5H8.83246L7.88246 18.07L7.85246 18.39C7.85246 18.8 8.02246 19.18 8.29246 19.45L9.35246 20.5L15.9425 13.91C16.3025 13.55 16.5225 13.05 16.5225 12.5V2.5C16.5225 1.4 15.6225 0.5 14.5225 0.5ZM18.5225 0.5V12.5H22.5225V0.5H18.5225Z" fill="black" fill-opacity="0.2"/>
+    <path d="M14.5225 0.5H5.52246C4.69246 0.5 3.98246 1 3.68246 1.72L0.662461 8.77C0.572461 9 0.522461 9.24 0.522461 9.5V11.5C0.522461 12.6 1.42246 13.5 2.52246 13.5H8.83246L7.88246 18.07L7.85246 18.39C7.85246 18.8 8.02246 19.18 8.29246 19.45L9.35246 20.5L15.9425 13.91C16.3025 13.55 16.5225 13.05 16.5225 12.5V2.5C16.5225 1.4 15.6225 0.5 14.5225 0.5ZM18.5225 0.5V12.5H22.5225V0.5H18.5225Z" fill="black" fillOpacity="0.2"/>
     </svg>
     
   )
@@ -161,8 +190,7 @@ function ThumbsUp(props) {
      className="mr-1"
      fill="none" 
      xmlns="http://www.w3.org/2000/svg">
-<path d="M12.6425 0.559969L7.10246 6.09997C6.73246 6.46997 6.52246 6.97997 6.52246 7.50997V17.5C6.52246 18.6 7.42246 19.5 8.52246 19.5H17.5225C18.3225 19.5 19.0425 19.02 19.3625 18.29L22.6225 10.68C23.4625 8.69997 22.0125 6.49997 19.8625 6.49997H14.2125L15.1625 1.91997C15.2625 1.41997 15.1125 0.909969 14.7525 0.549969C14.1625 -0.0300311 13.2225 -0.0300311 12.6425 0.559969ZM2.52246 19.5C3.62246 19.5 4.52246 18.6 4.52246 17.5V9.49997C4.52246 8.39997 3.62246 7.49997 2.52246 7.49997C1.42246 7.49997 0.522461 8.39997 0.522461 9.49997V17.5C0.522461 18.6 1.42246 19.5 2.52246 19.5Z" fill="#5BE7A1"/>
-</svg>
-
+    <path d="M12.6425 0.559969L7.10246 6.09997C6.73246 6.46997 6.52246 6.97997 6.52246 7.50997V17.5C6.52246 18.6 7.42246 19.5 8.52246 19.5H17.5225C18.3225 19.5 19.0425 19.02 19.3625 18.29L22.6225 10.68C23.4625 8.69997 22.0125 6.49997 19.8625 6.49997H14.2125L15.1625 1.91997C15.2625 1.41997 15.1125 0.909969 14.7525 0.549969C14.1625 -0.0300311 13.2225 -0.0300311 12.6425 0.559969ZM2.52246 19.5C3.62246 19.5 4.52246 18.6 4.52246 17.5V9.49997C4.52246 8.39997 3.62246 7.49997 2.52246 7.49997C1.42246 7.49997 0.522461 8.39997 0.522461 9.49997V17.5C0.522461 18.6 1.42246 19.5 2.52246 19.5Z" fill="#5BE7A1"/>
+    </svg>
   )
 }
