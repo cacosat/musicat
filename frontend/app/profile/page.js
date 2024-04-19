@@ -7,6 +7,7 @@ import SearchOverlay from "../components/searchOverlay";
 import Image from 'next/image'; 
 import Card from '../components/Card';
 import AboutCard from "../components/aboutCard";
+import Ratings from '../components/Ratings';
 
 export default function Profile() {
   // Agrega un nuevo estado para rastrear el botón activo
@@ -39,10 +40,13 @@ export default function Profile() {
       </>
     } else if (activeTab === 'ratings') {
       return <>
-        <div className="w-full h-full flex justify-center text-white ">
-          Ratings
+        <div className="w-full h-full flex flex-col items-center gap-8 py-8 px-4">
+          <div className="max-w-[900px] flex flex-col items-center justify-center overflow-hidden shadow-custom-vertical">
+            <Ratings />
+          </div>
         </div>
-      </>
+      </>;
+
     } else if (activeTab === 'guardado') {
       return <>
         <div className="w-full h-full flex justify-center text-white ">
@@ -128,5 +132,8 @@ export default function Profile() {
         </main>
       </SearchOverlay>
     </SearchProvider>
+
   );
 }
+
+
