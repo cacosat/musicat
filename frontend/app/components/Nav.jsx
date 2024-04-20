@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from "react";
+import { useState, useContext } from "react";
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -9,12 +9,16 @@ import rightArrow from '@/assets/icons/rightArrow.png'
 import search from '@/assets/icons/search.png'
 import user from '@/assets/icons/user.png'
 import settings from '@/assets/icons/settings.png'
+import { SearchQueryContext } from "../context";
 
 export default function Navbar() {
+    const {showSearchResults, setShowSearchResults} = useContext(SearchQueryContext);
     // helper funct + hooks
     const [isOpen, setIsOpen] = useState(false);
     const handleSearch = (e) => {
         e.preventDefault();
+        setShowSearchResults(!showSearchResults);
+        console.log(showSearchResults);
         // handle click on search:
         // show search overlay
     }
