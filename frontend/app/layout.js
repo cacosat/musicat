@@ -19,10 +19,10 @@ export default function RootLayout({ children }) {
       <body className={`${inter.className} bg-background`}>
         <div className="ml-[180px]"> {/* margin left equivalent to Navbar width */}
           <SearchProvider>
-            <div className="">
+            <div className=" z-[100]">
               <Navbar />
             </div>
-            <div>
+            <div className="">
               {children}
             </div>
           </SearchProvider>

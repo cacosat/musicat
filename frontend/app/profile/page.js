@@ -63,8 +63,8 @@ export default function Profile() {
   }
 
   return (
-    <SearchOverlay searchBar={showSearchResults}>
-      <main className="flex flex-col w-full overflow-x-hidden">
+    <main className="flex flex-col w-full h-full overflow-x-hidden">
+      <SearchOverlay searchBar={showSearchResults}>
         <div className="flex items-center justify-center w-full relative p-12">
           {/* Imagen de fondo para el rectángulo azul */}
           <Image
@@ -128,13 +128,12 @@ export default function Profile() {
             </button>
           </div>
         </div>
-        <div>
+        <div className="h-full">
           {activeTabContent(activeTab)}
         </div>
     
-      </main>
-    </SearchOverlay>
-
+      </SearchOverlay>
+    </main>
   );
 }
 
