@@ -13,14 +13,13 @@ import { SearchQueryContext } from "../context";
 export default function Profile() {
   // Agrega un nuevo estado para rastrear el botón activo
   const [activeTab, setActiveTab] = useState('reseñas');
-  const {showSearchResult} = useContext(SearchQueryContext);
+  const {showSearchResults, setShowSearchResults} = useContext(SearchQueryContext);
   const bannerTestImg = "/Santiago.jpeg"
   const userName = 'Ignacio Socías'
   const aboutCardDescription = 'Siempre me ha gustado especialmente el rock, fanatico de la banda chilena... humorista, Santiago de Chile.'
 
   const searchBarVisible = () => {
-    // console.log(showSearchResult)
-    // showSearchResult ? true : false;
+    return showSearchResult;
     // TODO function that returns true when searchbar should be visible to feed it into SearchOverlay
   }
   
@@ -64,7 +63,7 @@ export default function Profile() {
   }
 
   return (
-    <SearchOverlay searchBar={!searchBarVisible}>
+    <SearchOverlay searchBar={showSearchResults}>
       <main className="flex flex-col w-full overflow-x-hidden">
         <div className="flex items-center justify-center w-full relative p-12">
           {/* Imagen de fondo para el rectángulo azul */}
@@ -78,7 +77,6 @@ export default function Profile() {
           <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/50 to-black/80 z-5">
             {/* Div de degradado */}
           </div>
-
           <div className="flex justify-center items-center w-full max-w-[1000px] overflow-hidden gap-24 z-10 h-full">
           {/* Nuevo contenedor para alinear la imagen de perfil a la izquierda y el nombre y rectángulo a la derecha */}
             <div className="flex-shrink-0 w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-56 lg:h-56"> {/* Agrega un margin-bottom que sea el padding deseado */}
@@ -94,7 +92,7 @@ export default function Profile() {
                 />
               </div>
             </div>
-      
+    
             <div className="flex flex-col justify-center h-full gap-4">
             {/* Contenedor para el nombre y rectángulo borroso, alineados a la derecha */}
               {/* Nombre del usuario */}
@@ -106,7 +104,7 @@ export default function Profile() {
             </div>
           </div>
         </div>
-      
+    
         {/* Contenedor para los tabs */}
         <div className="w-full h-12 flex justify-center bg-lefter">
           <div className="sticky top-0 flex">
@@ -130,11 +128,10 @@ export default function Profile() {
             </button>
           </div>
         </div>
-
         <div>
           {activeTabContent(activeTab)}
         </div>
-        
+    
       </main>
     </SearchOverlay>
 

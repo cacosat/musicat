@@ -16,11 +16,7 @@ export default function Navbar() {
     // helper funct + hooks
     const [isOpen, setIsOpen] = useState(false);
     const handleSearch = (e) => {
-        e.preventDefault();
         setShowSearchResults(!showSearchResults);
-        console.log(showSearchResults);
-        // handle click on search:
-        // show search overlay
     }
 
     return <>
@@ -30,7 +26,7 @@ export default function Navbar() {
                     <button onClick={() => setIsOpen(!isOpen)} className='text-xl mb-4'>
                         Icono
                     </button>
-                    <Link href="/" className="flex gap-2 hover:bg-[#FFFFFF1A] p-2 rounded-xl" onClick={handleSearch}>
+                    <button className="flex gap-2 hover:bg-[#FFFFFF1A] p-2 rounded-xl" onClick={handleSearch}>
                         <Image
                             src={search}
                             height={24}
@@ -38,7 +34,7 @@ export default function Navbar() {
                             alt="search"
                         />
                         <p className=''>Search</p>
-                    </Link>
+                    </button>
                     <Link href="/" className="flex gap-2 hover:bg-[#FFFFFF1A] p-2 rounded-xl">
                         <Image
                             src={homeIcon}
