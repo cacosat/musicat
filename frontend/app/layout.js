@@ -16,13 +16,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-background`}>
-        <div className="ml-[180px]"> {/* margin left equivalent to Navbar width */}
+      <body className={`${inter.className} bg-background h-screen`}>
+        <div className="ml-[180px] h-full"> {/* margin left equivalent to Navbar width */}
           <SearchProvider>
             <div className=" z-[100]">
               <Navbar />
             </div>
-            <div className="">
+            <div className="h-full">
               {children}
             </div>
           </SearchProvider>

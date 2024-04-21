@@ -12,7 +12,7 @@ export default function searchOverlay({children, searchBar = false}) {
 
     return (
         <>
-            <div className="relative">
+            <div className="relative h-full">
                 <div className={`${showSearchResults ? 'h-full absolute z-20 inset-x-0 top-0 backdrop-blur-2xl bg-background/80' : ''} `} id="searchOverlay"> {/*transition-opacity duration-250 ${showSearchResults ? 'opacity-100' : 'opacity-0'} */}
                     <div className={`${searchBar ? ' flex justify-center py-8' : 'hidden'}`}>
                         <SearchBar placeholder='Barra de búsqueda'/>
@@ -28,6 +28,7 @@ export default function searchOverlay({children, searchBar = false}) {
                                         {/* Map over results */}
                                         <Ratings />
                                         <Ratings />
+                                        {/* <Ratings />
                                         <Ratings />
                                         <Ratings />
                                         <Ratings />
@@ -54,8 +55,7 @@ export default function searchOverlay({children, searchBar = false}) {
                                         <Ratings />
                                         <Ratings />
                                         <Ratings />
-                                        <Ratings />
-                                        <Ratings />
+                                        <Ratings /> */}
                                     </div>
                                 </div>
                             </div>

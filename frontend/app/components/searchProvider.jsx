@@ -17,7 +17,7 @@ export default function SearchProvider({children}) {
 
     return (
         <SearchQueryContext.Provider value={{query, setQuery, handleQueryChange, showSearchResults, setShowSearchResults}}>
-            <div>
+            <div className="h-full">
                 {children}
             </div>
         </SearchQueryContext.Provider>
