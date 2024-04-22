@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Card from '../components/Card';
 import AboutCard from "../components/aboutCard";
 import Ratings from '../components/Ratings';
+import { ComboboxDemo } from "@/components/ui/combobox";
 import { SearchQueryContext } from "../context";
 
 export default function Profile() {
@@ -50,6 +51,7 @@ export default function Profile() {
       return <>
         <div className="w-full h-full flex justify-center text-white ">
           Guardado
+          <ComboboxDemo />
         </div>
       </>
     }
