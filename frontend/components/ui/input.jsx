@@ -20,6 +20,11 @@ const Input = React.forwardRef(({ type, ...props }, ref) => {
           "grow bg-lefter text-custom-gray-200 placeholder:text-custom-gray-300",
         )}
         ref={ref}
+        onKeyDown={(event) => {
+          if (event.key === 'Escape') {
+            handleCancelSearch();
+          }
+        }}
         {...props} 
       />
       <div className={`${ showSearchResults ? '' : 'hidden' }`}>
