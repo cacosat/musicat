@@ -9,7 +9,7 @@ export default function Home() {
 
   return (
       <SearchOverlay searchBar={true}>
-        <main className="flex min-h-screen flex-col items-center gap-2 py-8">
+        <main className="flex flex-col items-center gap-2 py-8">
           <div className="flex gap-2">
             <Link href="/music" className="flex items-center justify-center px-4 py-2 border text-sm font-medium rounded-md text-white">
                 Go to Music
@@ -20,6 +20,34 @@ export default function Home() {
           </div>
 
           <div className="w-[80%] h-56">
+            <GradientOutline bg="url('/Santiago.jpeg')" px='16' py='16'>
+              <div className="w-fit h-fit text-white">
+                <GradientOutline bg="lefter">
+                  paddfkjalskj
+                </GradientOutline>
+              </div>
+            </GradientOutline>
+            <GradientOutline bg="url('/Santiago.jpeg')" px='16' py='16'>
+              <div className="w-fit h-fit text-white">
+                <GradientOutline bg="lefter">
+                  paddfkjalskj
+                </GradientOutline>
+              </div>
+            </GradientOutline>
+            <GradientOutline bg="url('/Santiago.jpeg')" px='16' py='16'>
+              <div className="w-fit h-fit text-white">
+                <GradientOutline bg="lefter">
+                  paddfkjalskj
+                </GradientOutline>
+              </div>
+            </GradientOutline>
+            <GradientOutline bg="url('/Santiago.jpeg')" px='16' py='16'>
+              <div className="w-fit h-fit text-white">
+                <GradientOutline bg="lefter">
+                  paddfkjalskj
+                </GradientOutline>
+              </div>
+            </GradientOutline>
             <GradientOutline bg="url('/Santiago.jpeg')" px='16' py='16'>
               <div className="w-fit h-fit text-white">
                 <GradientOutline bg="lefter">

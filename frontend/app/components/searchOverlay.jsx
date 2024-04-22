@@ -12,23 +12,22 @@ export default function searchOverlay({children, searchBar = false}) {
 
     return (
         <>
-            <div className="relative h-full">
-                <div className={`${showSearchResults ? 'h-full absolute z-20 inset-x-0 top-0 backdrop-blur-2xl bg-background/80' : ''} `} id="searchOverlay"> {/*transition-opacity duration-250 ${showSearchResults ? 'opacity-100' : 'opacity-0'} */}
-                    <div className={`${searchBar ? ' flex justify-center py-8' : 'hidden'}`}>
+            <div className="relative">
+                <div className={`${showSearchResults ? ' absolute z-20 inset-x-0 top-0 backdrop-blur-[20px] bg-background/25' : ''} `} id="searchOverlay"> {/*transition-opacity duration-250 ${showSearchResults ? 'opacity-100' : 'opacity-0'} */}
+                    <div className={`${searchBar ? ' flex justify-center py-8' : ''}`}>
                         <SearchBar placeholder='Barra de búsqueda'/>
                     </div>
                     <div className={` `}>
                         {showSearchResults ? (
-                            <div className={` flex flex-col items-center h-full pt-8`}>
+                            <div className={` flex flex-col items-center h-full `}>
                                 <div className="w-[80%] overflow-hidden">
                                     <p className="text-gray-400 text-xl">
                                         Search results: <span className="font-light italic">{query}</span>
                                     </p>
-                                    <div className="flex flex-col items-center gap-4">
+                                    <div className="flex flex-col items-center gap-4 py-8">
                                         {/* Map over results */}
                                         <Ratings />
                                         <Ratings />
-                                        {/* <Ratings />
                                         <Ratings />
                                         <Ratings />
                                         <Ratings />
@@ -55,14 +54,17 @@ export default function searchOverlay({children, searchBar = false}) {
                                         <Ratings />
                                         <Ratings />
                                         <Ratings />
-                                        <Ratings /> */}
+                                        <Ratings />
+                                        <Ratings />
                                     </div>
                                 </div>
                             </div>
                         ) : null}
                     </div>
                 </div>
-                {children}
+                <div className={`${showSearchResults ? 'pt-[104px]' : ''}`}>
+                    {children}
+                </div>
             </div>
         </>
     );
