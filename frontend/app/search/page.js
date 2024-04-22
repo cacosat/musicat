@@ -12,7 +12,7 @@ export default function Search() {
         <div className="w-full flex flex-col items-center py-8">
             <SearchBar placeholder={'Barra de búsqueda'} />
         </div>
-        <div className={` flex flex-col items-center h-full `}>
+        <div className={` flex flex-col items-center `}>
             <div className="w-[80%] overflow-hidden">
                 {query.length > 0 ? (
                     <div className="flex flex-col gap-8">
