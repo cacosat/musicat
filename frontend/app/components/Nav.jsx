@@ -12,7 +12,7 @@ import settings from '@/assets/icons/settings.png'
 import { SearchQueryContext } from "../context";
 
 export default function Navbar() {
-    const {showSearchResults, setShowSearchResults} = useContext(SearchQueryContext);
+    const {query, setQuery, showSearchResults, setShowSearchResults} = useContext(SearchQueryContext);
     // helper funct + hooks
 
     return <>
@@ -22,7 +22,12 @@ export default function Navbar() {
                     <button className='text-xl mb-4'>
                         Icono
                     </button>
-                    <Link href='/search' className="flex gap-2 hover:bg-[#FFFFFF1A] p-2 rounded-xl">
+                    <Link href='/search' 
+                        className="flex gap-2 hover:bg-[#FFFFFF1A] p-2 rounded-xl"
+                        onClick={() => {
+                            setQuery('');
+                            setShowSearchResults(false);
+                        }} >
                         <Image
                             src={search}
                             height={24}
@@ -31,7 +36,12 @@ export default function Navbar() {
                         />
                         <p className=''>Search</p>
                     </Link>
-                    <Link href="/" className="flex gap-2 hover:bg-[#FFFFFF1A] p-2 rounded-xl">
+                    <Link href="/" 
+                        className="flex gap-2 hover:bg-[#FFFFFF1A] p-2 rounded-xl"
+                        onClick={() => {
+                            setQuery('');
+                            setShowSearchResults(false);
+                        }} >
                         <Image
                             src={homeIcon}
                             height={24}
@@ -40,7 +50,12 @@ export default function Navbar() {
                         />
                         <p className=''>Home</p>
                     </Link>
-                    <Link href="/profile" className="flex gap-2 hover:bg-[#FFFFFF1A] p-2 rounded-xl">
+                    <Link href="/profile" 
+                        className="flex gap-2 hover:bg-[#FFFFFF1A] p-2 rounded-xl"
+                        onClick={() => {
+                            setQuery('');
+                            setShowSearchResults(false);
+                        }} >
                         <Image
                             src={user}
                             height={24}
@@ -50,7 +65,12 @@ export default function Navbar() {
                         <p className=''>Profile</p>
                     </Link>
                 </div>
-                <Link href="/settings" className="flex gap-2 hover:bg-[#FFFFFF1A] p-2 rounded-xl justify-self-end">
+                <Link href="/settings" 
+                    className="flex gap-2 hover:bg-[#FFFFFF1A] p-2 rounded-xl justify-self-end"
+                    onClick={() => {
+                        setQuery('');
+                        setShowSearchResults(false);
+                    }} >
                     <Image
                         src={settings}
                         height={24}
