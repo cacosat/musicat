@@ -1,9 +1,6 @@
 "use client";
 import Link from "next/link";
 import { useContext, useState } from 'react';
-import SearchBar from "../components/searchBox";
-import SearchProvider from "../components/searchProvider";
-import SearchOverlay from "../components/searchOverlay";
 import Image from 'next/image'; 
 import Card from '../components/Card';
 import AboutCard from "../components/aboutCard";
@@ -18,28 +15,24 @@ export default function Profile() {
   const userName = 'Ignacio Socías'
   const aboutCardDescription = 'Siempre me ha gustado especialmente el rock, fanatico de la banda chilena... humorista, Santiago de Chile.'
 
-  const searchBarVisible = () => {
-    return showSearchResult;
-    // TODO function that returns true when searchbar should be visible to feed it into SearchOverlay
-  }
   
   function activeTabContent(activeTab) {
     if (activeTab === 'reseñas') {
       return <>
         <div className="w-full h-full flex flex-col items-center gap-8 py-8 px-4">
-          <div className="max-w-[900px] flex flex-col items-center justify-center overflow-hidden shadow-custom-vertical ">
+          <div className="max-w-[900px] min-h-fit flex flex-col items-center justify-center overflow-hidden shadow-custom-vertical ">
             <Card />
           </div>
-          <div className="max-w-[900px] h-fit flex flex-col items-center justify-center overflow-hidden shadow-custom-vertical ">
+          <div className="max-w-[900px] min-h-fit flex flex-col items-center justify-center overflow-hidden shadow-custom-vertical ">
             <Card />
           </div>
-          <div className="max-w-[900px] h-fit flex flex-col items-center justify-center overflow-hidden shadow-custom-vertical ">
+          <div className="max-w-[900px] min-h-fit flex flex-col items-center justify-center overflow-hidden shadow-custom-vertical ">
             <Card />
           </div>
-          <div className="max-w-[900px] h-fit flex flex-col items-center justify-center overflow-hidden shadow-custom-vertical ">
+          <div className="max-w-[900px] min-h-fit flex flex-col items-center justify-center overflow-hidden shadow-custom-vertical ">
             <Card />
           </div>
-          <div className="max-w-[900px] h-fit flex flex-col items-center justify-center overflow-hidden shadow-custom-vertical ">
+          <div className="max-w-[900px] min-h-fit flex flex-col items-center justify-center overflow-hidden shadow-custom-vertical ">
             <Card />
           </div>
         </div>
@@ -64,7 +57,6 @@ export default function Profile() {
 
   return (
     <main className="flex flex-col w-full h-full">
-      <SearchOverlay searchBar={showSearchResults}>
         <div className="flex items-center justify-center w-full relative p-12">
           {/* Imagen de fondo para el rectángulo azul */}
           <Image
@@ -131,8 +123,6 @@ export default function Profile() {
         <div className="">
           {activeTabContent(activeTab)}
         </div>
-    
-      </SearchOverlay>
     </main>
   );
 }
