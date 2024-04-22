@@ -51,7 +51,7 @@ export default function Profile() {
       return <>
         <div className="w-full h-full flex justify-center text-white ">
           Guardado
-          <ComboboxDemo />
+          {/* <ComboboxDemo /> */}
         </div>
       </>
     }
