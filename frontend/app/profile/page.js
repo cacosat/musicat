@@ -19,7 +19,7 @@ export default function Profile() {
   function activeTabContent(activeTab) {
     if (activeTab === 'reseñas') {
       return <>
-        <div className="w-full h-full flex flex-col items-center gap-8 py-8 px-4">
+        <div className="w-full flex flex-col items-center gap-8 py-8 px-4">
           <div className="max-w-[900px] min-h-fit flex flex-col items-center justify-center overflow-hidden shadow-custom-vertical ">
             <Card />
           </div>
@@ -98,8 +98,8 @@ export default function Profile() {
         </div>
     
         {/* Contenedor para los tabs */}
-        <div className="w-full h-12 flex justify-center bg-lefter">
-          <div className="sticky top-0 flex">
+        <div className="w-full min-h-8 flex justify-center bg-lefter">
+          {/* <div className="sticky top-0 flex"> */}
             <button
               onClick={() => setActiveTab('reseñas')}
               className={`w-fit h-full text-center ${activeTab === 'reseñas' ? 'text-white font-semibold bg-background' : 'text-custom-gray-200 font-light bg-lefter'} px-10 focus:outline-none`}
@@ -118,7 +118,7 @@ export default function Profile() {
             >
               Guardado
             </button>
-          </div>
+          {/* </div> */}
         </div>
         <div className="">
           {activeTabContent(activeTab)}
