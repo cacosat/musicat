@@ -2,7 +2,7 @@
 
 import React from "react";
 
-export default function GradientOutline({ bg = 'lefter', px = 16, py = 16, children }) {
+export default function GradientOutline({ bg = 'background', px = 16, py = 16, children }) {
     {/* 
         Este componente, cardOutline, siempre se tiene que usar envuelto por un div
         que decide el tamaño y puede recibir tres valores: px, py, bg
