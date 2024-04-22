@@ -9,37 +9,44 @@ import GradientOutline from "./gradientOutline";
 
 export default function Component() {
   return (
-    <GradientOutline px={12} py={12} bg='background' className="flex items-center justify-between p-4 text-gray-300">
-      <div className="flex items-center space-x-4">
-        <img
-          alt="Profile"
-          className="rounded-lg"
-          height="60"
-          src="/We are the grand.jpeg"
-          style={{
-            aspectRatio: "60/60",
-            objectFit: "cover",
-          }}
-          width="50"
-        />
-        <div className="text-center mx-2"> {/* Agregamos mx-2 para el margen */}
-          <Link className="block text-lg font-semibold text-gray-300" href="#">
-            Fantasmas
-          </Link>
-          <span className="block text-sm  text-gray-300">We Are The Grand</span>
+    <GradientOutline px={16} py={8} bg='cards'>
+        <div className="w-full flex justify-between">
+          <div className="flex gap-2">
+            {/* Name and group */}
+            <img
+              alt="Profile"
+              className="rounded-lg"
+              height="60"
+              src="/We are the grand.jpeg"
+              style={{
+                aspectRatio: "60/60",
+                objectFit: "cover",
+              }}
+              width="50"
+            />
+            <div className="text-left"> {/* Agregamos mx-2 para el margen */}
+              <Link className="block text-lg font-semibold text-white" href="#">
+                Fantasmas
+              </Link>
+              <span className="block text-sm font-light text-custom-gray-200">We Are The Grand</span>
+            </div>
+          </div>
+          <div className="flex items-center text-center">
+            <span className="font-light text-custom-gray-200">Volver</span> {/* Agregamos mx-2 para el margen */}
+          </div>
+          <div className="flex items-center text-center">
+            <span className="font-light text-custom-gray-200">100M</span> {/* Agregamos mx-2 para el margen */}
+          </div>
+          <div className="flex gap-4 items-center">
+            <HeadphonesIcon className="h-5 w-5 text-gray-300" />
+            <HeartIcon className="h-5 w-5  text-gray-300" />
+            <ShareIcon className="h-5 w-5  text-gray-300" />
+            <Button className="px-2 py-1 text-xs bg-lefter rounded-md flex items-center">
+              <StarIcon className="h-4 w-4 mr-1" />
+              4.8
+            </Button>
+          </div>
         </div>
-      </div>
-      <div className="flex items-center space-x-6">
-        <span className="font-bold mx-8  text-gray-300">Volver</span> {/* Agregamos mx-2 para el margen */}
-        <span className="font-semibold mx-8  text-gray-300">100M</span> {/* Agregamos mx-2 para el margen */}
-        <HeadphonesIcon className="h-5 w-5 text-gray-300" />
-        <HeartIcon className="h-5 w-5  text-gray-300" />
-        <ShareIcon className="h-5 w-5  text-gray-300" />
-        <Button className="px-2 py-1 text-xs bg-lefter rounded-md flex items-center">
-          <StarIcon className="h-4 w-4 mr-1" />
-          4.8
-        </Button>
-      </div>
     </GradientOutline>
   )
 }

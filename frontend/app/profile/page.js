@@ -40,7 +40,7 @@ export default function Profile() {
     } else if (activeTab === 'ratings') {
       return <>
         <div className="w-full h-full flex flex-col items-center gap-8 py-8 px-4">
-          <div className="max-w-[900px] flex flex-col items-center justify-center overflow-hidden shadow-custom-vertical">
+          <div className="w-full max-w-[900px] flex flex-col items-center justify-center overflow-hidden shadow-custom-vertical">
             <Ratings />
           </div>
         </div>
