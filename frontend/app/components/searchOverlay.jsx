@@ -62,7 +62,7 @@ export default function searchOverlay({children, searchBar = false}) {
                         ) : null}
                     </div>
                 </div>
-                <div className={`${showSearchResults ? 'pt-[104px]' : ''}`}>
+                <div className={` w-[80%] mx-auto ${showSearchResults ? 'pt-[104px]' : ''}`}>
                     {children}
                 </div>
             </div>

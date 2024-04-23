@@ -22,7 +22,7 @@ export default function RootLayout({ children }) {
             <div className=" z-[100]">
               <Navbar />
             </div>
-            <div className="h-full">
+            <div className="h-full flex flex-col items-center">
               {children}
             </div>
           </SearchProvider>
