@@ -14,11 +14,10 @@ export default function GradientOutline({ bg = 'background', px = 16, py = 16, c
 
     let bgImg = `bg-[${bg}] bg-cover bg-center`;
     let bgColor = `bg-${bg}`;
-    let bgClasses = bg.includes('url') ? bgImg : bgColor;
 
     return <>
-        <div className={`w-full h-full rounded-lg flex items-center justify-center bg-gradient-to-b from-white/30 to-white/5 p-[1px] shadow-custom-vertical `}>
-            <div className={`flex items-center justify-center w-full h-full rounded-lg ${bg.includes('url') ? '' : bgColor}`}
+        <div className={`w-full h-full rounded-lg flex items-center justify-center bg-gradient-to-b from-white/30 to-white/5 p-[1px] overflow-hidden shadow-custom-vertical `}>
+            <div className={`flex items-center justify-center w-full h-full rounded-lg ${bg.includes('url') ? '' : ' bg-cards'}`}
                 style={{
                     backgroundImage: `${bg.includes('url') ? bg : ''}`,
                     backgroundSize: 'cover',

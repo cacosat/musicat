@@ -10,7 +10,7 @@ import GradientOutline from "./gradientOutline";
 
 
     
-export default function Component() {
+export default function Card() {
   const albumCover = "/We are the grand.jpeg";
   const profilePicture = "/Socias.jpeg?height=40&width=40";
   const userName = "Ignacio Socias";
@@ -25,7 +25,7 @@ export default function Component() {
   return (
     <GradientOutline px={32} py={32} bg="url('/We are the grand.jpeg')" className="">
       {/* Contenido de la tarjeta */}
-      <div className="flex justify-center items-center gap-8">
+      <div className="flex justify-center items-center gap-8 h-fit max-h-80 ">
 
         <div className=" max-w-[255px] max-h-[255px] w-full h-full "> 
           {/* ALbum cover */}
