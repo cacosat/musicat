@@ -4,7 +4,7 @@ import Link from "next/link";
 import SearchOverlay from "./components/searchOverlay";
 import SearchProvider from "./components/searchProvider";
 import GradientOutline from "./components/gradientOutline";
-import Card from "./components/Card";
+import Card from "./components/reviewCard";
 import Ratings from "./components/Ratings";
 
 export default function Home() {
