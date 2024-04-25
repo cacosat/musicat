@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { useContext, useState } from 'react';
 import Image from 'next/image'; 
-import Card from '../components/Card';
+import Card from '../components/reviewCard';
 import AboutCard from "../components/aboutCard";
 import Ratings from '../components/Ratings';
 import { ComboboxDemo } from "@/components/ui/combobox";
