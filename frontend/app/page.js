@@ -6,6 +6,7 @@ import SearchProvider from "./components/searchProvider";
 import GradientOutline from "./components/gradientOutline";
 import Card from "./components/reviewCard";
 import Ratings from "./components/Ratings";
+import MusicCard from "./components/musicCard";
 
 export default function Home() {
 
@@ -18,7 +19,7 @@ export default function Home() {
           <div className="w-full flex flex-col gap-8 text-start py-8">
             <p className=" font-semibold text-[32px] text-white">Recommended</p>
             {/* Following should be small card component */}
-            <div className=" h-56">
+            <div className="flex flex-col gap-4 h-56">
               <GradientOutline bg="url('/Santiago.jpeg')" px='16' py='16'>
                 <div className="w-fit h-fit text-white">
                   <GradientOutline bg="lefter">
@@ -27,6 +28,7 @@ export default function Home() {
                 </div>
               </GradientOutline>
             </div>       
+            <MusicCard />
           </div>
           <div className="w-full flex flex-col gap-4 text-start py-8">
             <p className=" font-semibold text-[32px] text-white">Top 10 / Trends</p>
