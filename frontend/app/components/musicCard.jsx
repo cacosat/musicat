@@ -12,7 +12,7 @@ export default function MusicCard(props) {
     return (
         <div className="max-w-[275px]">
             <GradientOutline>
-                <div className="w-full flex flex-col">
+                <div className="w-full flex flex-col gap-4">
                     <div className=" flex gap-2">
                         <div className="rounded-lg overflow-hidden min-w-[125px] min-h-[125px]">
                             <Image
@@ -29,8 +29,9 @@ export default function MusicCard(props) {
                             </div>
 
                             {/* TODO: conditionally render text hierarchy depending on props.type */}
-                            <div className="text-white">
-                                {albumName}
+                            <div className="flex flex-col gap-1 text-white">
+                                <p>{albumName}</p>
+                                <p>{artistName}</p>
                             </div>
                         </div>
                     </div>
