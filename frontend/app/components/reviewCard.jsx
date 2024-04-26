@@ -7,8 +7,7 @@ import { AvatarImage, Avatar } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
 import Image from 'next/image'; 
 import GradientOutline from "./gradientOutline";
-
-
+import Link from "next/link";
     
 export default function Card() {
   const albumCover = "/We are the grand.jpeg";
@@ -24,22 +23,23 @@ export default function Card() {
 
   return (
     <GradientOutline px={32} py={32} bg="url('/We are the grand.jpeg')" className="">
-      {/* Contenido de la tarjeta */}
-      <div className="flex justify-center items-center gap-8 h-fit max-h-80 ">
-
-        <div className=" max-w-[255px] max-h-[255px] w-full h-full "> 
-          {/* ALbum cover */}
-          <Image
-            alt="Album Cover"
-            className="min-w-[125px] min-h-[125px] object-cover rounded-lg"
-            height={255}
-            src={albumCover}
-            width={255}
-          />
-        </div>
-
-        <div className="flex flex-col gap-6 items-start"> {/* Acá puede ser mejor dejar justify-between */}
-          {/* Contenedor avatar icon, nombre, stats y estrellas */}
+    <div className="flex justify-center items-center gap-8 h-fit max-h-80 ">
+      <div className="max-w-[255px] max-h-[255px] w-full h-full relative hover:opacity-75 transition-opacity duration-300"> 
+        {/* Actualiza aquí el Link */}
+        <Link href="/artist" passHref>
+          <div className="cursor-pointer">
+            <Image
+              alt="Album Cover"
+              className="min-w-[125px] min-h-[125px] object-cover rounded-lg"
+              height={255}
+              src={albumCover}
+              width={255}
+              layout="responsive"  // Asegúrate de tener layout="responsive" si es necesario
+            />
+          </div>
+        </Link>
+      </div>
+        <div className="flex flex-col gap-6 items-start">
           <div className="w-full flex items-center justify-between">
             <div className="flex items-center gap-4">
               <Avatar>
@@ -56,13 +56,11 @@ export default function Card() {
             </div>
             <div className="flex flex-col items-end">
               <div className="flex items-center gap-2 text-accent-green-light">
-                <div className="flex">
-                  <StarIcon className="" />
-                  <StarIcon className="" />
-                  <StarIcon className="" />
-                  <StarIcon className="" />
-                  <StarBorder className="" />
-                </div>
+                <StarIcon />
+                <StarIcon />
+                <StarIcon />
+                <StarIcon />
+                <StarBorder />
                 <p className="text-xl font-semibold">4.0</p>
               </div>
               <div className="text-sm text-gray-400">
@@ -70,31 +68,29 @@ export default function Card() {
               </div>
             </div>
           </div>
-
           <div className="flex flex-col gap-2 items-start text-white">
-            <div className="text-xl font-semibold ">
+            <div className="text-xl font-semibold">
               {reviewTitle}
             </div>
             <p className="font-light">
               {reviewContent}
             </p>
-            <button className=" self-end text-accent-green-light underline">
+            <button className="self-end text-accent-green-light underline">
               Ver más
             </button>
           </div>
-
           <div className="w-full flex justify-end">
             <div className="flex items-center">
               <Button className="text-accent-green-light gap-2" variant="ghost">
-                <ThumbsUp className="text-accent-green-light" /> 
+                <ThumbsUp className="text-accent-green-light" />
                 <p>12</p>
               </Button>
               <Button className="text-gray-400 gap-2" variant="ghost">
-                <ThumbsDown className="text-gray-400" /> 
+                <ThumbsDown className="text-gray-400" />
                 <p>8</p>
               </Button>
               <Button className="text-gray-400 gap-2" variant="ghost">
-                <Comments className="text-gray-400" /> 
+                <Comments className="text-gray-400" />
                 <p>2</p>
               </Button>
               <Button className="text-gray-400 gap-2" variant="ghost">
@@ -107,7 +103,6 @@ export default function Card() {
     </GradientOutline>
   );
 }
-
 function Comments(props) {
   return (
     <svg width="21" 
