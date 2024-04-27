@@ -15,11 +15,11 @@ export default function MusicCard(props) {
     }
 
     return (
-        <div className="w-[275px] h-[200px]">
+        <div className="w-[275px] h-[200px] ">
             <GradientOutline>
-                <div className="w-full flex flex-col gap-4">
-                    <div className=" flex gap-2">
-                        <div className="rounded-lg overflow-hidden min-w-[125px] min-h-[125px]">
+                <div className="w-full flex flex-col gap-4 ">
+                    <div className=" flex gap-2 ">
+                        <div className="rounded-lg overflow-hidden min-w-[125px] min-h-[125px] ">
                             <Image
                                 src={albumCover}
                                 width={125}
