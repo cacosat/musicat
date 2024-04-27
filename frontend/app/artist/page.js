@@ -1,6 +1,6 @@
 "use client";
 import Image from 'next/image';
-import AboutCard from "../components/aboutCard";
+import RateBlurryCard from "../components/RateBlurryCard";
 
 export default function Profile() {
     const bannerTestImg = "/Coldplay.jpg"
@@ -8,8 +8,8 @@ export default function Profile() {
     const aboutCardDescription = 'Siempre me ha gustado especialmente el rock, fanatico de la banda chilena... humorista, Santiago de Chile.'
 
     return (
-        <main className="flex flex-col w-full h-full">
-          <div className="flex items-center justify-center w-full relative p-12">
+        <main className="flex flex-col w-full min-h-screen">
+          <div className="flex items-center justify-center w-full relative p-12 h-[45vh]">
             {/* Background image for the banner */}
             <Image
               src={bannerTestImg}
@@ -19,16 +19,16 @@ export default function Profile() {
               className="z-0"
             />
             <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/50 to-black/80 z-10"></div>
-            
-            <div className="flex justify-center items-center w-full max-w-[1000px] overflow-hidden gap-24 z-20 h-full">
-              {/* New container for artist name and icons */}
-              <div className="flex flex-col justify-center items-start h-full">
+    
+            <div className="flex items-center justify-center w-full max-w-[1000px] overflow-hidden z-20 h-full">
+              {/* Container for artist name and icons */}
+              <div className="flex flex-col justify-center items-start h-full w-full"> {/* Adjusted padding for alignment */}
                 {/* Artist name */}
-                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white font-semibold">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white font-semibold">
                   {artistName}
                 </h1>
-                {/* Space for icons */}
-                <div className="flex justify-center gap-4 mt-4 w-full">
+                {/* Container for icons with increased top margin */}
+                <div className="flex justify-start gap-4 mt-6 w-full">
                   {/* Individual icon container */}
                   <div className="flex justify-center items-center h-full">
                     {/* YouTube icon */}
@@ -57,8 +57,8 @@ export default function Profile() {
               </div>
               
               {/* Container for the blurry rectangle */}
-              <div className="flex flex-col justify-end h-full gap-4">
-                <AboutCard description={aboutCardDescription} />
+              <div className="flex flex-col justify-center h-full"> {/* Adjusted padding for alignment */}
+              <RateBlurryCard rating={4.5} smallNumber={63} additionalNumber={5} anotherNumber={1000} />
               </div>
             </div>
           </div>
