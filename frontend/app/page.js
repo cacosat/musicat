@@ -2,11 +2,10 @@
 
 import Link from "next/link";
 import SearchOverlay from "./components/searchOverlay";
-import SearchProvider from "./components/searchProvider";
-import GradientOutline from "./components/gradientOutline";
 import Card from "./components/reviewCard";
 import Ratings from "./components/Ratings";
 import MusicCard from "./components/musicCard";
+import ListHeader from "./components/listHeader";
 
 export default function Home() {
 
@@ -27,17 +26,17 @@ export default function Home() {
           </div>
           <div className="w-full flex flex-col gap-4 text-start py-8">
             <p className=" font-semibold text-[32px] text-white">Top 10 / Trends</p>
-            {/* Following should be small card component */}
-            <Ratings />
-            <Ratings />
-            <Ratings />
-            <Ratings />
-            <Ratings />
-            <Ratings />
-            <Ratings />
-            <Ratings />
-            <Ratings />
-            <Ratings />
+              <ListHeader />
+              <Ratings />
+              <Ratings />
+              <Ratings />
+              <Ratings />
+              <Ratings />
+              <Ratings />
+              <Ratings />
+              <Ratings />
+              <Ratings />
+              <Ratings />
           </div>
 
         </main>

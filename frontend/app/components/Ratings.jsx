@@ -10,7 +10,7 @@ import GradientOutline from "./gradientOutline";
 export default function Component() {
   return (
     <GradientOutline px={16} py={8} bg='cards'>
-        <div className="w-full flex justify-between">
+        <div className="w-full grid grid-cols-4 gap-4 place-items-center">
           <div className="flex gap-2">
             {/* Name and group */}
             <img
@@ -37,7 +37,7 @@ export default function Component() {
           <div className="flex items-center text-center">
             <span className="font-light text-custom-gray-200">100M</span> {/* Agregamos mx-2 para el margen */}
           </div>
-          <div className="flex gap-4 items-center">
+          <div className="flex gap-2 items-center">
             <HeadphonesIcon className="h-5 w-5 text-gray-300" />
             <HeartIcon className="h-5 w-5  text-gray-300" />
             <ShareIcon className="h-5 w-5  text-gray-300" />
