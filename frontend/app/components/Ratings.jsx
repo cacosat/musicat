@@ -8,21 +8,24 @@ import { Button } from "@/components/ui/button"
 import GradientOutline from "./gradientOutline";
 
 export default function Component() {
+  // TODO: function to limit characters for titles, authors, etc., as it is in musicCard component:
+  // function truncateText(text, limit) {
+  //   return text.length > limit ? text.substring(0, limit) + '...' : text;
+  // }
+
   return (
     <GradientOutline px={16} py={8} bg='cards'>
-        <div className="w-full flex justify-between">
-          <div className="flex gap-2">
+        <div className="w-full grid grid-cols-4 place-items-center">
+          <div className="flex gap-2 place-items-center">
             {/* Name and group */}
             <img
               alt="Profile"
-              className="rounded-lg"
-              height="60"
+              className="rounded-lg w-[50px] h-[50px]"
               src="/We are the grand.jpeg"
               style={{
-                aspectRatio: "60/60",
+                aspectRatio: "1/1",
                 objectFit: "cover",
               }}
-              width="50"
             />
             <div className="text-left"> {/* Agregamos mx-2 para el margen */}
               <Link className="block text-lg font-semibold text-white" href="#">
