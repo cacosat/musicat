@@ -15,7 +15,7 @@ export default function MusicCard(props) {
     }
 
     return (
-        <div className="w-[275px] h-[200px] ">
+        <div className="min-w-[275px] min-h-[200px] w-[275px] h-[200px]">
             <GradientOutline>
                 <div className="w-full flex flex-col gap-4 ">
                     <div className=" flex gap-2 ">
