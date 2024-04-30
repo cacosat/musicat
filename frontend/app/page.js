@@ -6,6 +6,7 @@ import Card from "./components/reviewCard";
 import Ratings from "./components/Ratings";
 import MusicCard from "./components/musicCard";
 import ListHeader from "./components/listHeader";
+import Carrousel from "./components/carrousel";
 
 export default function Home() {
 
@@ -17,16 +18,14 @@ export default function Home() {
           </div>
           <div className="w-full flex flex-col gap-8 text-start py-8">
             <p className=" font-semibold text-[32px] text-white">Recommended</p>
-            {/* Following should be small card component */}
-            <div className="flex justify-center">
-              <div className="max-w-[900px] flex gap-4 h-56 overflow-x-scroll scrollbar-thin scrollbar-track-transparent scrollbar-thumb-cards ">
-                <MusicCard type='song' />
-                <MusicCard type='artist' />
-                <MusicCard type='album' />
-                <MusicCard type='album' />
-                <MusicCard type='album' />
-              </div>
-            </div>  
+            {/* scroll div */}
+            <Carrousel>
+              <MusicCard type='song' />
+              <MusicCard type='artist' />
+              <MusicCard type='album' />
+              <MusicCard type='album' />
+              <MusicCard type='album' />
+            </Carrousel>
           </div>
           <div className="w-full flex flex-col gap-4 text-start py-8">
             <p className=" font-semibold text-[32px] text-white">Top 10 / Trends</p>

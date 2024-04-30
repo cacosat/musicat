@@ -2,8 +2,7 @@
 import Image from 'next/image';
 import RateBlurryCard from "../components/RateBlurryCard";
 import MusicCard from "../components/musicCard";
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
+import Carrousel from '../components/carrousel';
 
 export default function Profile() {
     const bannerTestImg = "/Coldplay.jpg"
@@ -62,7 +61,7 @@ export default function Profile() {
               
               {/* Container for the blurry rectangle */}
               <div className="flex flex-col justify-center h-full"> {/* Adjusted padding for alignment */}
-              <RateBlurryCard rating={4.5} smallNumber={63} additionalNumber={5} anotherNumber={1000} />
+                <RateBlurryCard rating={4.5} smallNumber={63} additionalNumber={5} anotherNumber={1000} />
               </div>
             </div>
           </div>
@@ -70,43 +69,16 @@ export default function Profile() {
 
           <div className="w-full flex flex-col items-start text-start py-8 px-28"> {/* Ajustado para alinear a la izquierda */}
             <p className="font-semibold text-[32px] text-white mb-8">Discography Ratings</p> {/* Aumenta el margen inferior */}
-
-            {/* Contenedor del carrusel y flechas */}
-            <div className="relative w-full flex items-center px-0">
-
-            {/* Left arrow svg */}
-              <div className="absolute left-0 z-10  cursor-pointer">
-                <svg width="8" height="15" viewBox="0 0 8 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M7.70711 2.20711C8.09763 1.81658 8.09763 1.18342 7.70711 0.792893C7.31658 0.402369 6.68342 0.402369 6.29289 0.792893L0.292893 6.79289C-0.0976317 7.18342 -0.0976318 7.81658 0.292893 8.20711L6.29289 14.2071C6.68342 14.5976 7.31658 14.5976 7.70711 14.2071C8.09763 13.8166 8.09763 13.1834 7.70711 12.7929L2.41421 7.5L7.70711 2.20711Z" fill="#B3B3B3"/>
-                  <path d="M7.70711 2.20711C8.09763 1.81658 8.09763 1.18342 7.70711 0.792893C7.31658 0.402369 6.68342 0.402369 6.29289 0.792893L0.292893 6.79289C-0.0976317 7.18342 -0.0976318 7.81658 0.292893 8.20711L6.29289 14.2071C6.68342 14.5976 7.31658 14.5976 7.70711 14.2071C8.09763 13.8166 8.09763 13.1834 7.70711 12.7929L2.41421 7.5L7.70711 2.20711Z" fill="black" fill-opacity="0.2"/>
-                </svg>
-              </div>
-
-        
-            <Swiper
-              spaceBetween={50}
-              slidesPerView={3}
-              onSlideChange={() => console.log('slide change')}
-              onSwiper={(swiper) => console.log(swiper)}
-              className="w-full"
-            >
-              <SwiperSlide><MusicCard type='album' /></SwiperSlide>
-              <SwiperSlide><MusicCard type='album' /></SwiperSlide>
-              <SwiperSlide><MusicCard type='album' /></SwiperSlide>
-              <SwiperSlide><MusicCard type='album' /></SwiperSlide>
-              <SwiperSlide><MusicCard type='album' /></SwiperSlide>
-              <SwiperSlide><MusicCard type='album' /></SwiperSlide>
-            </Swiper>
-      
-              {/* Right arrow svg */}
-          <div className="absolute right-0 z-10 cursor-pointer">
-            <svg width="8" height="15" viewBox="0 0 8 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M0.292893 12.7929C-0.0976312 13.1834 -0.0976311 13.8166 0.292893 14.2071C0.683417 14.5976 1.31658 14.5976 1.70711 14.2071L7.70711 8.20711C8.09763 7.81658 8.09763 7.18342 7.70711 6.79289L1.70711 0.792892C1.31658 0.402368 0.683417 0.402369 0.292893 0.792892C-0.0976317 1.18342 -0.0976317 1.81658 0.292893 2.20711L5.58579 7.5L0.292893 12.7929Z" fill="#B3B3B3"/>
-              <path d="M0.292893 12.7929C-0.0976312 13.1834 -0.0976311 13.8166 0.292893 14.2071C0.683417 14.5976 1.31658 14.5976 1.70711 14.2071L7.70711 8.20711C8.09763 7.81658 8.09763 7.18342 7.70711 6.79289L1.70711 0.792892C1.31658 0.402368 0.683417 0.402369 0.292893 0.792892C-0.0976317 1.18342 -0.0976317 1.81658 0.292893 2.20711L5.58579 7.5L0.292893 12.7929Z" fill="black" fill-opacity="0.2"/>
-              </svg>
+            <Carrousel>
+              <MusicCard type='album' />
+              <MusicCard type='album' />
+              <MusicCard type='album' />
+              <MusicCard type='album' />
+              <MusicCard type='album' />
+              <MusicCard type='album' />
+            </Carrousel>
           </div>
-        </div>
-      </div>
+      
     </main>
   );
 }
