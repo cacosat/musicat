@@ -29,6 +29,14 @@ export default function Search() {
                              ))} */}
                             <Ratings />
                             <Ratings />
+                            <Ratings />
+                            <Ratings />
+                            <Ratings />
+                            <Ratings />
+                            <Ratings />
+                            <Ratings />
+                            <Ratings />
+                            <Ratings />
                         </div>
                     </div>
                     ) : null}
