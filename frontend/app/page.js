@@ -19,7 +19,7 @@ export default function Home() {
             <p className=" font-semibold text-[32px] text-white">Recommended</p>
             {/* Following should be small card component */}
             <div className="flex justify-center">
-              <div className="max-w-[900px] flex gap-4 h-56 overflow-auto">
+              <div className="max-w-[900px] flex gap-4 h-56 overflow-x-scroll scrollbar-thin scrollbar-track-transparent scrollbar-thumb-cards ">
                 <MusicCard type='song' />
                 <MusicCard type='artist' />
                 <MusicCard type='album' />
