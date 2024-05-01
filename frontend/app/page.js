@@ -20,11 +20,12 @@ export default function Home() {
             <p className=" font-semibold text-[32px] text-white">Recommended</p>
             {/* scroll div */}
             <Carrousel>
+              <MusicCard type='artist' />
+              <MusicCard type='album' />
               <MusicCard type='song' />
               <MusicCard type='artist' />
               <MusicCard type='album' />
-              <MusicCard type='album' />
-              <MusicCard type='album' />
+              <MusicCard type='song' />
             </Carrousel>
           </div>
           <div className="w-full flex flex-col gap-4 text-start py-8">
