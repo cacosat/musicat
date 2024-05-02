@@ -3,13 +3,23 @@
  * @see https://v0.dev/t/4CnRLa0lg1J
  * Documentation: https://v0.dev/docs#integrating-generated-code-into-your-nextjs-app
  */
+import { useState } from "react";
 import { AvatarImage, Avatar } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
 import Image from 'next/image'; 
 import GradientOutline from "./gradientOutline";
 import Link from "next/link";
+import { comma } from "postcss/lib/list";
     
 export default function Card() {
+  const [likeState, setLikeState] = useState(false);
+  const [dislikeState, setDislikeState] = useState(false);
+  // The following states should be set via API call to the backend, and update any change to it
+  let [numOfLikes, setNumOfLikes] = useState(2);
+  let [numOfDislikes, setNumOfDislikes] = useState(0);
+  let [comments, setComments] = useState([]);
+  let [commentsState, setCommentsState] = useState(false);
+
   const songName = 'Pienso en Ti';
   const albumName = 'Volver';
   const artistName = 'We are The Grand';
@@ -21,6 +31,21 @@ export default function Card() {
   const lastUpdateRating = "Hace 2 semanas";
   const reviewTitle = "Título de la reseña";
   const reviewContent = "Lorem ipsum dolor sit amet consectetur. Consectetur habitant fringilla erat morbi enim tempor eros ultricies morbi."
+
+  function onLikeClick() {
+    setLikeState(!likeState);
+    // API call to get current num of likes and update it, pwnding to define best approach
+    if (likeState === false) {
+      setNumOfLikes(numOfLikes + 1);
+    }
+  }
+
+  function onDislikeClick() {
+    setDislikeState(!dislikeState);
+    if (dislikeState === false) {
+      setNumOfDislikes(numOfDislikes + 1);
+    }
+  }
 
   // TODO: lógica para el manejo de los botones
   function truncateText(text, limit) {
@@ -49,15 +74,15 @@ export default function Card() {
               <div className="text-custom-gray-200 opacity-90">
                 <div className="flex gap-2 items-center text-white font-semibold">                  
                   <img src="/songIcon.svg" alt="Song icon" className="w-[18px] h-[18px] " />
-                  <p title={songName}>{truncateText(songName, 20)}</p>
+                  <p title={songName}>{truncateText(songName, 25)}</p>
                 </div>
                 <div className="flex gap-2 items-center text-sm">
                   <img src="artistIcon.svg" alt="Artist icon" className="w-[18px] h-[18px]" />
-                  <p title={artistName}>{truncateText(artistName, 20)}</p>
+                  <p title={artistName}>{truncateText(artistName, 25)}</p>
                 </div>
                 <div className="flex gap-2 items-center text-sm">
                   <img src="albumIcon.svg" alt="Album icon" className="w-[18px] h-[18px]" />
-                  <p title={albumName}>{truncateText(albumName, 20)}</p>
+                  <p title={albumName}>{truncateText(albumName, 25)}</p>
                 </div>
               </div>
             </div>
@@ -106,19 +131,31 @@ export default function Card() {
           </div>
           <div className="w-full flex justify-end">
             <div className="flex items-center">
-              <Button className="text-accent-green-light gap-2" variant="ghost">
-                <ThumbsUp className="text-accent-green-light" />
-                <p>12</p>
+              <Button className="text-custom-gray-200 gap-2" variant="ghost" onClick={onLikeClick}>
+                {likeState ? (
+                  <img src="/thumbUpIconActive.svg" alt="like" />
+                ) : (
+                  <img src="/thumbUpIconInactive.svg" alt="like" />
+                )}
+                <p>{numOfLikes}</p>
               </Button>
-              <Button className="text-gray-400 gap-2" variant="ghost">
-                <ThumbsDown className="text-gray-400" />
-                <p>8</p>
+              <Button className="text-custom-gray-200 gap-2" variant="ghost" onClick={onDislikeClick}>
+                {dislikeState ? (
+                  <img src="/thumbDownIconActive.svg" alt="dislike" />
+                ) : (
+                  <img src="/thumbDownIconInactive.svg" alt="dislike" />
+                )}
+                <p>{numOfDislikes}</p>
               </Button>
-              <Button className="text-gray-400 gap-2" variant="ghost">
-                <Comments className="text-gray-400" />
-                <p>2</p>
+              <Button className="text-custom-gray-200 gap-2" variant="ghost" onClick={() => {setCommentsState(!commentsState)}}>
+                {commentsState ? (
+                  <img src="/commentIconActive.svg" alt="comments" />
+                ) : (
+                  <img src="/commentIconInactive.svg" alt="comments" />
+                )}
+                <p>0</p>
               </Button>
-              <Button className="text-gray-400 gap-2" variant="ghost">
+              <Button className="text-custom-gray-200 gap-2" variant="ghost">
                 <Share className="text-gray-400" />
               </Button>
             </div>
