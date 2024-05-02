@@ -12,8 +12,9 @@ export default function Home() {
 
   return (
       <SearchOverlay searchBar={true}>
-        <main className="w-full flex flex-col items-center  ">
-          <div className=" py-8">
+        <main className="w-full flex flex-col items-center ">
+          <div className=" flex flex-col gap-8 text-start py-8">
+            <p className=" font-semibold text-[32px] text-white">Featured Review</p>
             <Card />
           </div>
           <div className="w-full flex flex-col gap-8 text-start py-8">
