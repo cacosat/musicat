@@ -39,23 +39,28 @@ export default function Card() {
               width={255}
               layout="responsive"  // Asegúrate de tener layout="responsive" si es necesario
             />
-            <div className="absolute top-0 left-0 w-full h-full rounded-lg bg-gradient-to-t from-black/75 to-transparent hover:bg-black/50 p-4 transition-all">
-              <div className="flex flex-col h-full place-items-center opacity-0 transition-all hover:opacity-100">
+            {/* <div className="absolute top-0 left-0 w-full h-full rounded-lg bg-gradient-to-t from-black/75 to-transparent hover:bg-black/50 p-4 transition-all hover:opacity-100">
+              <div className="flex flex-col h-full place-items-center opacity-0 transition-all ">
                 <img src="albumIcon.svg" alt="Album icon" className="w-32 h-auto " />
               </div>
-            </div>
-            <div className="absolute left-4 bottom-4 text-custom-gray-200">
-              <div className="flex gap-2 items-center text-white font-semibold">
-                <img src="/songIcon.svg" alt="Song icon" className="w-[18px] h-[18px]" />
-                <p>{songName}</p>
+            </div> */}
+            <div className="absolute top-0 left-0 w-full h-full p-4 rounded-lg group bg-gradient-to-t from-black/75 to-transparent hover:bg-black/50 flex flex-col justify-end transition-all">
+              <div className="flex flex-col h-full place-items-center transition-all opacity-0 group-hover:opacity-100 ">
+                <img src="albumIcon.svg" alt="Album icon" className="w-32 h-auto " />
               </div>
-              <div className="flex gap-2 items-center text-sm">
-                <img src="artistIcon.svg" alt="Artist icon" className="w-[18px] h-[18px]" />
-                <p>{artistName}</p>
-              </div>
-              <div className="flex gap-2 items-center text-sm">
-                <img src="albumIcon.svg" alt="Album icon" className="w-[18px] h-[18px]" />
-                <p>{albumName}</p>
+              <div className="text-custom-gray-200">
+                <div className="flex gap-2 items-center text-white font-semibold">
+                  <img src="/songIcon.svg" alt="Song icon" className="w-[18px] h-[18px]" />
+                  <p>{songName}</p>
+                </div>
+                <div className="flex gap-2 items-center text-sm">
+                  <img src="artistIcon.svg" alt="Artist icon" className="w-[18px] h-[18px]" />
+                  <p>{artistName}</p>
+                </div>
+                <div className="flex gap-2 items-center text-sm">
+                  <img src="albumIcon.svg" alt="Album icon" className="w-[18px] h-[18px]" />
+                  <p>{albumName}</p>
+                </div>
               </div>
             </div>
           </div>
