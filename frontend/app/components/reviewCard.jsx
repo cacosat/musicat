@@ -23,6 +23,10 @@ export default function Card() {
   const reviewContent = "Lorem ipsum dolor sit amet consectetur. Consectetur habitant fringilla erat morbi enim tempor eros ultricies morbi."
 
   // TODO: lógica para el manejo de los botones
+  // TODO: function to limit characters for titles, authors, etc., as it is in musicCard component:
+  // function truncateText(text, limit) {
+  //   return text.length > limit ? text.substring(0, limit) + '...' : text;
+  // }
 
   return (
     <GradientOutline px={32} py={32} bg="url('/We are the grand.jpeg')" className="">
