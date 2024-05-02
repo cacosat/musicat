@@ -23,10 +23,9 @@ export default function Card() {
   const reviewContent = "Lorem ipsum dolor sit amet consectetur. Consectetur habitant fringilla erat morbi enim tempor eros ultricies morbi."
 
   // TODO: lógica para el manejo de los botones
-  // TODO: function to limit characters for titles, authors, etc., as it is in musicCard component:
-  // function truncateText(text, limit) {
-  //   return text.length > limit ? text.substring(0, limit) + '...' : text;
-  // }
+  function truncateText(text, limit) {
+    return text.length > limit ? text.substring(0, limit) + '...' : text;
+  }
 
   return (
     <GradientOutline px={32} py={32} bg="url('/We are the grand.jpeg')" className="">
@@ -48,17 +47,17 @@ export default function Card() {
                 <img src="albumIcon.svg" alt="Album icon" className="w-32 h-auto opacity-50" />
               </div>
               <div className="text-custom-gray-200 opacity-90">
-                <div className="flex gap-2 items-center text-white font-semibold">
+                <div className="flex gap-2 items-center text-white font-semibold">                  
                   <img src="/songIcon.svg" alt="Song icon" className="w-[18px] h-[18px] " />
-                  <p>{songName}</p>
+                  <p title={songName}>{truncateText(songName, 20)}</p>
                 </div>
                 <div className="flex gap-2 items-center text-sm">
                   <img src="artistIcon.svg" alt="Artist icon" className="w-[18px] h-[18px]" />
-                  <p>{artistName}</p>
+                  <p title={artistName}>{truncateText(artistName, 20)}</p>
                 </div>
                 <div className="flex gap-2 items-center text-sm">
                   <img src="albumIcon.svg" alt="Album icon" className="w-[18px] h-[18px]" />
-                  <p>{albumName}</p>
+                  <p title={albumName}>{truncateText(albumName, 20)}</p>
                 </div>
               </div>
             </div>
