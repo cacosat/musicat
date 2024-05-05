@@ -15,7 +15,8 @@ export default function Home() {
       <SearchOverlay searchBar={true}>
         <main className="w-full flex flex-col items-center ">
           <div className=" flex flex-col gap-8 text-start py-8">
-            <p className=" font-semibold text-[32px] text-white">Featured Review</p>
+            <p className=" font-semibold text-[32px] text-white">Daily Highlights (top 5)</p>
+            {/* TODO: presentación chora para un top 5 que vaya ciclando con el tiempo, referencia: netflix top 10 */}
             <Card />
           </div>
           <div className="w-full flex flex-col gap-8 text-start py-8">
