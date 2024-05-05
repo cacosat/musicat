@@ -27,7 +27,7 @@ export default function Carrousel({ children }) {
                     onClick={handleLeftClick}>
                 <img src="/leftArrow.svg" alt="left arrow"  />
             </button>
-            <div ref={scrollContainer} className="max-w-[950px] flex gap-4 h-56 overflow-x-scroll scroll-smooth scrollbar-thin scrollbar-track-transparent scrollbar-thumb-cards px-8">
+            <div ref={scrollContainer} className="max-w-[950px] flex gap-4 h-56 overflow-x-scroll scroll-smooth scrollbar-thin scrollbar-track-transparent scrollbar-thumb-custom-cards px-8">
                 {children}
             </div>
             <button className="absolute top-0 right-0 z-10 h-[100%] min-w-10 bg-gradient-to-r from-transparent via-background/75 to-background flex items-center justify-end"

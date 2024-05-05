@@ -32,8 +32,8 @@ module.exports = {
         // tampoco incluye los grises de figma en favor de gray neutral (gray-000)
         "background": "#0C1218",
         "lefter": "#1E282D",
-        "cards": "#1C232B",
-        "cards-light": "#1D3449",
+        "custom-cards": "#1C232B",
+        "custom-cards-light": "#1D3449",
         "accent-green-dark": "#028090",
         "accent-green-light": "#5BE7A1",
         "accent-blue-dark": "#6590FE",

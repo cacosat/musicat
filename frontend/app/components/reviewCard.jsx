@@ -53,7 +53,7 @@ export default function Card() {
   }
 
   return (
-    <GradientOutline px={32} py={32} bg="url('/We are the grand.jpeg')" className="">
+    <GradientOutline px={32} py={32} bg="/We are the grand.jpeg" className="">
     <div className="flex justify-center items-center gap-8 h-fit max-h-80 ">
       <div className=" max-w-[255px] max-h-[255px] w-full h-full relative "> 
         {/* Actualiza aquí el Link */}

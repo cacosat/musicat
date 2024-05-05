@@ -14,7 +14,7 @@ export default function Component() {
   // }
 
   return (
-    <GradientOutline px={16} py={8} bg='cards'>
+    <GradientOutline px={16} py={8} bg='custom-cards'>
         <div className="w-full grid grid-cols-4 gap-4 place-items-center">
           <div className="flex gap-2">
             {/* Name and group */}
