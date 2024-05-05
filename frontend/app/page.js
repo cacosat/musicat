@@ -7,6 +7,7 @@ import Ratings from "./components/Ratings";
 import MusicCard from "./components/musicCard";
 import ListHeader from "./components/listHeader";
 import Carrousel from "./components/carrousel";
+import MusicCardSmall from "./components/musicCardSmall";
 
 export default function Home() {
 
