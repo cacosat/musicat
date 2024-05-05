@@ -2,7 +2,7 @@
 
 import React from "react";
 
-export default function GradientOutline({ bg = 'background', px = 16, py = 16, children }) {
+export default function GradientOutline({ bg = 'custom-cards', px = 16, py = 16, children }) {
     {/* 
         Este componente, cardOutline, siempre se tiene que usar envuelto por un div
         que decide el tamaño y puede recibir tres valores: px, py, bg
@@ -13,17 +13,18 @@ export default function GradientOutline({ bg = 'background', px = 16, py = 16, c
     */}
 
     let bgImg = `bg-[${bg}] bg-cover bg-center`;
+    let bgImgStyle = `url('${bg}')`;
     let bgColor = `bg-${bg}`;
 
     return <>
         <div className={`w-full h-full rounded-lg flex items-center justify-center bg-gradient-to-b from-white/30 to-white/5 p-[1px] overflow-hidden shadow-custom-vertical`}>
-            <div className={`flex items-center justify-center w-full h-full rounded-lg shadow-custom-inset-vertical ${bg.includes('url') ? '' : ' bg-cards'}`}
+            <div className={`flex items-center justify-center w-full h-full rounded-lg shadow-custom-inset-vertical ${bg.includes('/') ? '' : bgColor}`}
                 style={{
-                    backgroundImage: `${bg.includes('url') ? bg : ''}`,
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
+                    backgroundImage: `${bg.includes('/') ? bgImgStyle : ''}`,
+                    backgroundSize: `${bg.includes('/') ? 'cover' : ''}`,
+                    backgroundPosition: `${bg.includes('/') ? 'center' : ''}`,
                 }}>
-                <div className={`relative flex items-center justify-center w-full h-full rounded-lg backdrop-blur-[8px] ${bg.includes('url') ? 'bg-black/60 ' : ''}`}
+                <div className={`relative flex items-center justify-center w-full h-full rounded-lg backdrop-blur-[8px] ${bg.includes('/') ? 'bg-black/60 ' : ''}`}
                     style={{
                         paddingLeft: `${px}px`,
                         paddingRight: `${px}px`,

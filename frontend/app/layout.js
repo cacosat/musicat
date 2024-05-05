@@ -22,7 +22,7 @@ export default function RootLayout({ children }) {
             <div className=" z-[100]">
               <Navbar />
             </div>
-            <div className="h-full flex flex-col items-center overflow-y-scroll scrollbar scrollbar-track-transparent scrollbar-thumb-cards">
+            <div className="h-full flex flex-col items-center overflow-y-scroll scrollbar scrollbar-track-transparent scrollbar-thumb-custom-cards">
               {children}
             </div>
           </SearchProvider>
