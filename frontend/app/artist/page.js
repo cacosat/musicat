@@ -2,6 +2,7 @@
 import Image from 'next/image';
 import RateBlurryCard from "../components/RateBlurryCard";
 import MusicCard from "../components/musicCard";
+import MusicCardSmall from '../components/musicCardSmall';
 import Carrousel from '../components/carrousel';
 
 export default function Profile() {
@@ -12,7 +13,7 @@ export default function Profile() {
 
     return (
         <main className="flex flex-col w-full min-h-screen">
-          <div className="flex items-center justify-center w-full relative p-12 h-[45vh]">
+          <div className="flex items-center justify-center w-full relative p-12 min-h-[320px]">
             {/* Background image for the banner */}
             <Image
               src={bannerTestImg}
@@ -66,19 +67,26 @@ export default function Profile() {
             </div>
           </div>
           
+          {/* Content post banner */}
+          <div className='w-[80%] mx-auto flex flex-col gap-8'>
 
-          <div className="w-full flex flex-col items-start text-start py-8 px-28"> {/* Ajustado para alinear a la izquierda */}
-            <p className="font-semibold text-[32px] text-white mb-8">Discography Ratings</p> {/* Aumenta el margen inferior */}
-            <Carrousel>
-              <MusicCard type='album' />
-              <MusicCard type='album' />
-              <MusicCard type='album' />
-              <MusicCard type='album' />
-              <MusicCard type='album' />
-              <MusicCard type='album' />
-            </Carrousel>
+            <div className="w-full flex flex-col items-start text-start gap-8 py-4">
+              <p className="font-semibold text-[32px] text-white">Discography Ratings</p>
+              <Carrousel>
+                <MusicCard type='album' />
+                <MusicCard type='album' />
+                <MusicCard type='album' />
+                <MusicCard type='album' />
+                <MusicCard type='album' />
+                <MusicCard type='album' />
+              </Carrousel>
+            </div>
+
+            <div>
+              <MusicCardSmall type="artist" />
+            </div>
           </div>
-      
+          
     </main>
   );
 }

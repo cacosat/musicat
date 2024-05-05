@@ -16,57 +16,59 @@ export default function MusicCardSmall(props) { // type can be 'artist', 'album'
     }
 
     return(
-        <GradientOutline background="cards">
-            <div className="flex flex-col gap-4">
-                <div className="relative w-[200px] h-[125px] flex place-items-center aspect-video overflow-hidden rounded-lg">
-                    <Image 
-                        src={albumCover}
-                        width={200}
-                        height={200}
-                        alt="album cover"
-                        className="absolute min-w-full min-h-full"
-                    />
-                    <div className="absolute top-0 left-0 w-full h-full bg-black opacity-25 hover:opacity-0 transition-all"></div>
-                </div>
-                <Badge type={props.type} />
-                <div className="flex flex-col gap-1 text-white">
-                    <div className="font-semibold">
-                        {/* Title, or top text */}
-                        {props.type === 'song' ? (
-                            <Link href={`/song/${songName}`}>
-                                <p className="" title={songName}>{truncateText(songName, 20)}</p>
-                            </Link>
-                        ) : (props.type === 'album' ? (
-                            <Link href={`/album/${albumName}`}>
-                                <p className="" title={albumName}>{truncateText(albumName, 20)}</p>
-                            </Link>
-                        ) : (
-                            <Link href={`/artist/${artistName}`}>
-                                <p className="" title={artistName}>{truncateText(artistName, 30)}</p>
-                            </Link>
-                        ))}
+        <div className="w-fit">
+            <GradientOutline background="cards" className="">
+                <div className="flex flex-col gap-4">
+                    <div className="relative w-[150px] h-[100px] flex place-items-center aspect-video overflow-hidden rounded-lg">
+                        <Image
+                            src={albumCover}
+                            width={200}
+                            height={200}
+                            alt="album cover"
+                            className="absolute min-w-full min-h-full"
+                        />
+                        <div className="absolute top-0 left-0 w-full h-full bg-black opacity-25 hover:opacity-0 transition-all"></div>
                     </div>
-                    <div className="text-custom-gray-200 font-light text-sm">
-                        {/* Secondary text */}
-                        {props.type === 'song' ? (
-                            <div>
+                    <Badge type={props.type} />
+                    <div className="flex flex-col gap-1 text-white">
+                        <div className="font-semibold">
+                            {/* Title, or top text */}
+                            {props.type === 'song' ? (
+                                <Link href={`/song/${songName}`}>
+                                    <p className="" title={songName}>{truncateText(songName, 20)}</p>
+                                </Link>
+                            ) : (props.type === 'album' ? (
                                 <Link href={`/album/${albumName}`}>
-                                    <p className="" title={albumName}>{truncateText(albumName, 10)}</p>
+                                    <p className="" title={albumName}>{truncateText(albumName, 20)}</p>
                                 </Link>
+                            ) : (
                                 <Link href={`/artist/${artistName}`}>
-                                    <p className="" title={artistName}>{truncateText(artistName, 10)}</p>
+                                    <p className="" title={artistName}>{truncateText(artistName, 30)}</p>
                                 </Link>
-                            </div>
-                        ) : (props.type === 'album' ? (
-                            <Link href={`/artist/${artistName}`}>
-                                <p className="" title={artistName}>{truncateText(artistName, 20)}</p>
-                            </Link>
-                        ) : (
-                            null
-                        ))}
+                            ))}
+                        </div>
+                        <div className="text-custom-gray-200 font-light text-sm">
+                            {/* Secondary text */}
+                            {props.type === 'song' ? (
+                                <div>
+                                    <Link href={`/album/${albumName}`}>
+                                        <p className="" title={albumName}>{truncateText(albumName, 10)}</p>
+                                    </Link>
+                                    <Link href={`/artist/${artistName}`}>
+                                        <p className="" title={artistName}>{truncateText(artistName, 10)}</p>
+                                    </Link>
+                                </div>
+                            ) : (props.type === 'album' ? (
+                                <Link href={`/artist/${artistName}`}>
+                                    <p className="" title={artistName}>{truncateText(artistName, 20)}</p>
+                                </Link>
+                            ) : (
+                                null
+                            ))}
+                        </div>
                     </div>
-                </div>                
-            </div>
-        </GradientOutline>
+                </div>
+            </GradientOutline>
+        </div>
     )
 }
