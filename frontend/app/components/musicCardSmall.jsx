@@ -8,7 +8,7 @@ import Badge from "./badge";
 export default function MusicCardSmall(props) { // type can be 'artist', 'album' and 'song'
     const songName = 'Swallowed By The Sea'
     const albumCover = '/estoyBien.jpg';
-    const artistName = 'artist name';
+    const artistName = 'Estoy Bien';
     const albumName = 'album name';
 
     function truncateText(text, limit) {
@@ -20,24 +20,14 @@ export default function MusicCardSmall(props) { // type can be 'artist', 'album'
             <GradientOutline bg={albumCover} px={0} py={0} blur={false} >
                 {/* TODO: gradiente negro más oscuro en los lados que en el centro */}
                 {/* TODO: nombre que se elija según tipo de tarjeta y muestre artista, canción y album */}
-                <div className="text-white h-[200px] p-4 bg-gradient-to-t from-black to-transparent flex flex-col justify-between">
+                <div className="text-white rounded-lg max-w-[200px] w-[200px] h-[200px] flex flex-col justify-between p-4 bg-gradient-to-r from-black/50 via-black/0 to-black/50 hover:bg-black/25 transition-all">
                     <div className="flex justify-between">
                         <Badge type='artist' />
                         <img src="/starFilled.svg" alt="" />
                     </div>
-                    <div className="text-custom-gray-200 opacity-90">
-                        <div className="flex gap-2 items-center text-white font-semibold">                  
-                            <img src="/songIcon.svg" alt="Song icon" className="w-[18px] h-[18px] " />
-                            <p title={songName}>{truncateText(songName, 25)}</p>
-                        </div>
-                        <div className="flex gap-2 items-center text-sm">
-                            <img src="artistIcon.svg" alt="Artist icon" className="w-[18px] h-[18px]" />
-                            <p title={artistName}>{truncateText(artistName, 25)}</p>
-                        </div>
-                        <div className="flex gap-2 items-center text-sm">
-                            <img src="albumIcon.svg" alt="Album icon" className="w-[18px] h-[18px]" />
-                            <p title={albumName}>{truncateText(albumName, 25)}</p>
-                        </div>
+                    <div className="flex gap-2 items-center text-white font-semibold">                  
+                        <img src="artistIcon.svg" alt="Artist icon" className="w-[24px] h-[24px]" />
+                        <p title={artistName}>{truncateText(artistName, 25)}</p>
                     </div>
                 </div>
                 {/* <div className="flex flex-col gap-4">
