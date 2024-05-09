@@ -18,6 +18,8 @@ export default function MusicCardSmall(props) { // type can be 'artist', 'album'
     return(
         <div className="w-fit mb-8">
             <GradientOutline bg={albumCover} px={0} py={0} blur={false} >
+                {/* TODO: gradiente negro más oscuro en los lados que en el centro */}
+                {/* TODO: nombre que se elija según tipo de tarjeta y muestre artista, canción y album */}
                 <div className="text-white h-[200px] p-4 bg-gradient-to-t from-black to-transparent flex flex-col justify-between">
                     <div className="flex justify-between">
                         <Badge type='artist' />
