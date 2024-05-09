@@ -2,7 +2,7 @@
 
 import React from "react";
 
-export default function GradientOutline({ bg = 'custom-cards', px = 16, py = 16, children }) {
+export default function GradientOutline({ bg = 'custom-cards', px = 16, py = 16, blur = true, children }) {
     {/* 
         Este componente, cardOutline, siempre se tiene que usar envuelto por un div
         que decide el tamaño y puede recibir tres valores: px, py, bg
@@ -24,7 +24,7 @@ export default function GradientOutline({ bg = 'custom-cards', px = 16, py = 16,
                     backgroundSize: `${bg.includes('/') ? 'cover' : ''}`,
                     backgroundPosition: `${bg.includes('/') ? 'center' : ''}`,
                 }}>
-                <div className={`relative flex items-center justify-center w-full h-full rounded-lg backdrop-blur-[8px] ${bg.includes('/') ? 'bg-black/60 ' : ''}`}
+                <div className={`relative flex items-center justify-center w-full h-full rounded-lg ${ blur ? 'backdrop-blur-[8px]' : '' } ${bg.includes('/') ? 'bg-black/60 ' : ''}`}
                     style={{
                         paddingLeft: `${px}px`,
                         paddingRight: `${px}px`,
