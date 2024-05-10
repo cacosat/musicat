@@ -82,8 +82,19 @@ export default function Profile() {
               </Carrousel>
             </div>
 
-            <div>
-              <MusicCardSmall type='artist' />
+            <div className="w-full flex flex-col items-start text-start gap-8 py-4">
+              <p className="font-semibold text-[32px] text-white">Popular Songs</p>
+              pending
+            </div>
+
+            <div className="w-full flex flex-col items-start text-start gap-8 py-4">
+              <p className="font-semibold text-[32px] text-white">Similar Artists</p>
+              <div class="w-full flex gap-4 justify-between">
+                <MusicCardSmall type='artist' />
+                <MusicCardSmall type='artist' />
+                <MusicCardSmall type='artist' />
+                <MusicCardSmall type='artist' />
+              </div>
             </div>
           </div>
           
