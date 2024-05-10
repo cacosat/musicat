@@ -24,7 +24,7 @@ export default function GradientOutline({ bg = 'custom-cards', px = 16, py = 16,
                     backgroundSize: `${bg.includes('/') ? 'cover' : ''}`,
                     backgroundPosition: `${bg.includes('/') ? 'center' : ''}`,
                 }}>
-                <div className={`relative flex items-center justify-center w-full h-full rounded-lg ${ blur ? 'backdrop-blur-[8px]' : '' } ${bg.includes('/') ? 'bg-black/60 ' : ''}`}
+                <div className={`relative flex items-center justify-center w-full h-full rounded-lg transition-all ${ blur ? 'backdrop-blur-[8px]' : '' } ${bg.includes('/') ? 'bg-black/60 ' : ''}`}
                     style={{
                         paddingLeft: `${px}px`,
                         paddingRight: `${px}px`,
