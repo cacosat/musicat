@@ -83,7 +83,7 @@ export default function Profile() {
             </div>
 
             <div>
-              <MusicCardSmall type="artist" />
+              <MusicCardSmall type='artist' />
             </div>
           </div>
           
