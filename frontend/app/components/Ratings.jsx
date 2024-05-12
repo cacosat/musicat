@@ -4,53 +4,69 @@
  * Documentation: https://v0.dev/docs#integrating-generated-code-into-your-nextjs-app
  */
 import Link from "next/link"
+import {useEffect, useState, useRef} from 'react';
 import { Button } from "@/components/ui/button"
 import GradientOutline from "./gradientOutline";
 
 export default function Component() {
+  const [currentWidth, setCurrentWidth] = useState(0);
+  const widthRef = useRef(null);
+  const songName = 'Fantasmas'
+  const albumCover = '/We are the grand.jpeg';
+  const artistName = 'We Are The Grand';
+  const albumName = 'Volver';
+  
+  useEffect(() => {
+    if (widthRef.current) {
+      setCurrentWidth(widthRef.current.offsetWidth);
+    }
+  }, []);
+
   // TODO: function to limit characters for titles, authors, etc., as it is in musicCard component:
-  // function truncateText(text, limit) {
-  //   return text.length > limit ? text.substring(0, limit) + '...' : text;
-  // }
+  function truncateText(text, limit) {
+    return text.length > limit ? text.substring(0, limit) + '...' : text;
+  }
 
   return (
-    <GradientOutline px={16} py={8} bg='custom-cards'>
-        <div className="w-full grid grid-cols-4 gap-4 place-items-center">
-          <div className="flex gap-2">
-            {/* Name and group */}
-            <img
-              alt="Profile"
-              className="rounded-lg w-[50px] h-[50px]"
-              src="/We are the grand.jpeg"
-              style={{
-                aspectRatio: "1/1",
-                objectFit: "cover",
-              }}
-            />
-            <div className="text-left"> {/* Agregamos mx-2 para el margen */}
-              <Link className="block text-lg font-semibold text-white" href="#">
-                Fantasmas
-              </Link>
-              <span className="block text-sm font-light text-custom-gray-200">We Are The Grand</span>
+    <div className="w-full" ref={widthRef}>
+      <GradientOutline px={16} py={8} bg='custom-cards' >
+          <div className="w-full flex justify-between place-items-center">
+            <div className="flex gap-2">
+              {/* Name and group */}
+              <img
+                alt="Profile"
+                className="rounded-lg w-[50px] h-[50px]"
+                src="/We are the grand.jpeg"
+                style={{
+                  aspectRatio: "1/1",
+                  objectFit: "cover",
+                }}
+              />
+              <div className="text-left"> {/* Agregamos mx-2 para el margen */}
+                <Link className="block text-lg font-semibold text-white" href="#" title={songName}>
+                  {truncateText(songName, 15)}
+                </Link>
+                <span className="block text-sm font-light text-custom-gray-200" title={artistName}>{truncateText(artistName, 15)}</span>
+              </div>
+            </div>
+            <div className="flex items-center text-center">
+              <span className="font-light text-custom-gray-200" title={albumName}>{truncateText(albumName, 15)}</span> {/* Agregamos mx-2 para el margen */}
+            </div>
+            <div className="flex items-center text-center">
+              <span className="font-light text-custom-gray-200">100M</span> {/* Agregamos mx-2 para el margen */}
+            </div>
+            <div className="flex gap-2 items-center">
+              <HeadphonesIcon className="h-5 w-5 text-gray-300" />
+              <HeartIcon className="h-5 w-5  text-gray-300" />
+              <ShareIcon className="h-5 w-5  text-gray-300" />
+              <Button className="px-2 py-1 text-xs bg-lefter rounded-md flex items-center">
+                <StarIcon className="h-4 w-4 mr-1" />
+                4.8
+              </Button>
             </div>
           </div>
-          <div className="flex items-center text-center">
-            <span className="font-light text-custom-gray-200">Volver</span> {/* Agregamos mx-2 para el margen */}
-          </div>
-          <div className="flex items-center text-center">
-            <span className="font-light text-custom-gray-200">100M</span> {/* Agregamos mx-2 para el margen */}
-          </div>
-          <div className="flex gap-2 items-center">
-            <HeadphonesIcon className="h-5 w-5 text-gray-300" />
-            <HeartIcon className="h-5 w-5  text-gray-300" />
-            <ShareIcon className="h-5 w-5  text-gray-300" />
-            <Button className="px-2 py-1 text-xs bg-lefter rounded-md flex items-center">
-              <StarIcon className="h-4 w-4 mr-1" />
-              4.8
-            </Button>
-          </div>
-        </div>
-    </GradientOutline>
+      </GradientOutline>
+    </div>
   )
 }
 function HeadphonesIcon(props) {
