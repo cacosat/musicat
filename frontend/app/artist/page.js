@@ -69,7 +69,7 @@ export default function Profile() {
           </div>
           
           {/* Content post banner */}
-          <div className='w-[80%] mx-auto flex flex-col gap-8'>
+          <div className='w-[80%] max-w-[963px] mx-auto flex flex-col gap-8'>
 
             <div className="w-full flex flex-col items-start text-start gap-8 pt-8">
               <p className="font-semibold text-[32px] text-white">Discography Ratings</p>
