@@ -2,6 +2,7 @@
 import Image from 'next/image';
 import RateBlurryCard from "../components/RateBlurryCard";
 import MusicCard from "../components/musicCard";
+import Ratings from "@/app/components/Ratings"
 import MusicCardSmall from '../components/musicCardSmall';
 import Carrousel from '../components/carrousel';
 
@@ -70,7 +71,7 @@ export default function Profile() {
           {/* Content post banner */}
           <div className='w-[80%] mx-auto flex flex-col gap-8'>
 
-            <div className="w-full flex flex-col items-start text-start gap-8 py-4">
+            <div className="w-full flex flex-col items-start text-start gap-8 pt-8">
               <p className="font-semibold text-[32px] text-white">Discography Ratings</p>
               <Carrousel>
                 <MusicCard type='album' />
@@ -82,18 +83,26 @@ export default function Profile() {
               </Carrousel>
             </div>
 
-            <div className="w-full flex flex-col items-start text-start gap-8 py-4">
-              <p className="font-semibold text-[32px] text-white">Popular Songs</p>
-              pending
-            </div>
+            <div className='flex gap-12'>
+              <div className="w-full flex flex-col items-start text-start gap-8 py-4">
+                <p className="font-semibold text-[32px] text-white">Popular Songs</p>
+                <div className='w-full flex flex-col gap-2'>
+                  <Ratings />
+                  <Ratings />
+                  <Ratings />
+                  <Ratings />
+                  <Ratings />
+                </div>
+              </div>
 
-            <div className="w-full flex flex-col items-start text-start gap-8 py-4">
-              <p className="font-semibold text-[32px] text-white">Similar Artists</p>
-              <div class="w-full flex gap-4 justify-between">
-                <MusicCardSmall type='artist' />
-                <MusicCardSmall type='artist' />
-                <MusicCardSmall type='artist' />
-                <MusicCardSmall type='artist' />
+              <div className="w-full flex flex-col items-start text-start gap-8 py-4">
+                <p className="font-semibold text-[32px] text-white">Similar Artists</p>
+                <div class="w-full h-full flex flex-wrap gap-4 place-content-between">
+                  <MusicCardSmall type='artist' />
+                  <MusicCardSmall type='artist' />
+                  <MusicCardSmall type='artist' />
+                  <MusicCardSmall type='artist' />
+                </div>
               </div>
             </div>
           </div>
