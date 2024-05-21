@@ -24,8 +24,8 @@ export default function Card() {
   const albumName = 'Volver';
   const artistName = 'We are The Grand';
   const albumCover = "/We are the grand.jpeg";
-  const profilePicture = "/Socias.jpeg?height=40&width=40";
-  const userName = "Ignacio Socias";
+  const profilePicture = "/Lucas.jpeg?height=40&width=40";
+  const userName = "Lucas Espinoza";
   const userTotalReviews = "30";
   const userMeanReview = "3.9";
   const lastUpdateRating = "Hace 2 semanas";
