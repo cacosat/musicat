@@ -29,7 +29,7 @@ export default function Component() {
 
   return (
     <div className="w-full" ref={widthRef}>
-      <GradientOutline px={16} py={8} bg='custom-cards' >
+      <GradientOutline px={16} py={8}>
           <div className="w-full flex justify-between place-items-center">
             <div className="flex gap-2">
               {/* Name and group */}
