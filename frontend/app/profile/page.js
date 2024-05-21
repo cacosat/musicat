@@ -13,7 +13,7 @@ export default function Profile() {
   const [activeTab, setActiveTab] = useState('reseñas');
   const {showSearchResults, setShowSearchResults} = useContext(SearchQueryContext);
   const bannerTestImg = "/Santiago.jpeg"
-  const userName = 'Ignacio Socías'
+  const userName = 'Lucas Espinoza'
   const aboutCardDescription = 'Siempre me ha gustado especialmente el rock, fanatico de la banda chilena... humorista, Santiago de Chile.'
 
   
@@ -78,7 +78,7 @@ export default function Profile() {
               <div className="relative pt-[100%] overflow-hidden rounded-full">
                 {/* Imagen de perfil */}
                 <Image
-                  src="/Socias.jpeg"
+                  src="/Lucas.jpeg"
                   alt="Imagen de perfil"
                   layout="fill"
                   objectFit="cover"
