@@ -18,7 +18,7 @@ export default function GradientOutline({ bg = '#1C232B', px = 16, py = 16, blur
 
     return <>
         <div className={`w-full h-full rounded-lg flex items-center justify-center bg-gradient-to-b from-white/30 to-white/5 p-[1px] overflow-hidden shadow-custom-vertical`}>
-            <div className={`flex items-center justify-center w-full h-full rounded-lg shadow-custom-inset-vertical ${bg.includes('/') ? '' : bgColor}`}
+            <div className={`flex items-center justify-center w-full h-full rounded-lg shadow-custom-inset-vertical`}
                 style={bg.includes('/') ? 
                 {
                     backgroundImage: bgImgStyle,
