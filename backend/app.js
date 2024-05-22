@@ -14,7 +14,7 @@ connectDB();
 app.use(express.json());
 // jhkjsdbjdbsjbdgit
 
-app.get('/', (req, res) => {
+app.get('/api', (req, res) => {
     res.send('API is running...');
 });
 
