@@ -8,11 +8,15 @@ dotenv.config();
 const app = express();
 
 // Connect to MongoDB
-connectDB();
+// connectDB();
 
 // Middleware
 app.use(express.json());
-// jhkjsdbjdbsjbdgit 
+// jhkjsdbjdbsjbdgit
+
+app.get('/', (req, res) => {
+    res.send('API is running...');
+});
 
 
 const PORT = process.env.PORT || 5000;
