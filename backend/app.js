@@ -1,4 +1,5 @@
 import express from 'express';
+import cors from 'cors';
 import connectDB from './config/db.js';
 import dotenv from 'dotenv';
 import spotifyRoutes from './routes/spotify.js'
@@ -7,6 +8,10 @@ import spotifyRoutes from './routes/spotify.js'
 dotenv.config();
 
 const app = express();
+
+app.use(cors({
+    origin: 'http://localhost:3000' // only allows request from frontend hosted at localhost:3000
+}))
 
 // Connect to MongoDB
 connectDB();
