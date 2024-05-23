@@ -10,10 +10,19 @@ export default function SearchBar({ children, placeholder }) {
     const {query, showSearchResults, handleQueryChange} = useContext(SearchQueryContext)
 
     useEffect(() => {
-        if (query.length > 0) {
-            const token_data = fetch('http://localhost:5000/api/spotify/spotify-search');
-            console.log(token_data);
-        }
+        const fetchData = async () => {
+            if (query.length > 0) {
+                try {
+                    const response = await fetch('http://localhost:5000/api/spotify/spotify-search');
+                    const token_data = await response.json()
+                    console.log(token_data)
+                } catch (error) {
+                    console.error('Error fetching token data: ', error);
+                }
+            }
+        };
+
+        fetchData();
     }, [query]);
 
 
