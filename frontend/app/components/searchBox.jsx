@@ -9,9 +9,12 @@ import { SearchQueryContext } from "../context";
 export default function SearchBar({ children, placeholder }) {
     const {query, showSearchResults, handleQueryChange} = useContext(SearchQueryContext)
 
-    // useEffect(() => {
-    //     console.log(query);
-    // }, [query]);
+    useEffect(() => {
+        if (query.length > 0) {
+            const token_data = fetch('http://localhost:5000/api/spotify/spotify-search');
+            console.log(token_data);
+        }
+    }, [query]);
 
 
     return (

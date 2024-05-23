@@ -1,6 +1,7 @@
 import express from 'express';
 import connectDB from './config/db.js';
 import dotenv from 'dotenv';
+import spotifyRoutes from './routes/spotify.js'
 
 // Load environment variables
 dotenv.config();
@@ -12,11 +13,12 @@ connectDB();
 
 // Middleware
 app.use(express.json());
-// jhkjsdbjdbsjbdgithdjsdhjhffdjsd
 
 app.get('/api', (req, res) => {
     res.send('API is running...');
 });
+
+app.use('/api/spotify', spotifyRoutes);
 
 
 const PORT = process.env.PORT || 5000;
