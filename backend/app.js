@@ -14,7 +14,7 @@ app.use(cors({
 }))
 
 // Connect to MongoDB
-connectDB();
+// connectDB();
 
 // Middleware
 app.use(express.json());
