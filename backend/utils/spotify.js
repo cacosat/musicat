@@ -2,7 +2,7 @@ import dotenv from 'dotenv'
 
 dotenv.config();
 
-export default async function getSpotifyAuthToken() {
+export async function getSpotifyAuthToken() {
     const authParams = {
         method: 'POST',
         headers: {
@@ -16,3 +16,16 @@ export default async function getSpotifyAuthToken() {
     return data // data.access_token
 }
 
+export async function getSpotifySearch(token, query, type) {
+    const searchParams = {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + token
+        }
+    }
+
+    const response = await fetch('https://api.spotify.com/v1/search?q=' + query + '&type=' + type, searchParams);
+    const search_data = await response.json();
+    return search_data;
+}
