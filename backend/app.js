@@ -1,6 +1,6 @@
 import express from 'express';
 import cors from 'cors';
-import connectDB from './config/db.js';
+// import connectDB from './config/db.js';
 import dotenv from 'dotenv';
 import spotifyRoutes from './routes/spotify.js'
 
@@ -15,7 +15,6 @@ app.use(cors({
 
 // Connect to MongoDB
 // connectDB();
-// comentarioQL
 
 // Middleware
 app.use(express.json());

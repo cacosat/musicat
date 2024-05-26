@@ -10,6 +10,8 @@ export default function SearchBar({ children, placeholder }) {
     const {query, showSearchResults, handleQueryChange} = useContext(SearchQueryContext)
 
     useEffect(() => {
+        // TODO: fetch only on new chars, and apply debounce
+        
         const fetchData = async () => {
             if (query.length > 0) {
                 try {
