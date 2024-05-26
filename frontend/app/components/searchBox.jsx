@@ -8,16 +8,17 @@ import { SearchQueryContext } from "../context";
 
 export default function SearchBar({ children, placeholder }) {
     const {query, showSearchResults, handleQueryChange} = useContext(SearchQueryContext)
+    const search_type = 'artist'; // artist, album or song
 
     useEffect(() => {
         // TODO: fetch only on new chars, and apply debounce
-        
+
         const fetchData = async () => {
             if (query.length > 0) {
                 try {
-                    const response = await fetch('http://localhost:5000/api/spotify/spotify-search');
-                    const token_data = await response.json()
-                    console.log(token_data)
+                    const response_token = await fetch(`http://localhost:5000/api/spotify/spotify-search?query=${encodeURIComponent(query)}&type=${search_type}`);
+                    const search_data = await response_token.json();
+                    console.log(search_data);
                 } catch (error) {
                     console.error('Error fetching token data: ', error);
                 }
