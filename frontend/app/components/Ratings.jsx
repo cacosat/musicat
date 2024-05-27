@@ -8,13 +8,13 @@ import {useEffect, useState, useRef} from 'react';
 import { Button } from "@/components/ui/button"
 import GradientOutline from "./gradientOutline";
 
-export default function Component() {
+export default function Ratings({song = 'Loading Song', album = 'Loading Album', artist = 'Loading Artist', img}) {
   const [currentWidth, setCurrentWidth] = useState(0);
   const widthRef = useRef(null);
-  const songName = 'Fantasmas'
-  const albumCover = '/We are the grand.jpeg';
-  const artistName = 'We Are The Grand';
-  const albumName = 'Volver';
+  const songName = song // 'Fantasmas'
+  const albumCover =  '/We are the grand.jpeg';
+  const artistName = artist // 'We Are The Grand';
+  const albumName = album // 'Volver';
   
   useEffect(() => {
     if (widthRef.current) {
@@ -34,9 +34,9 @@ export default function Component() {
             <div className="flex gap-2">
               {/* Name and group */}
               <img
-                alt="Profile"
+                alt="Cover Image"
                 className="rounded-lg w-[50px] h-[50px]"
-                src="/We are the grand.jpeg"
+                src={album}
                 style={{
                   aspectRatio: "1/1",
                   objectFit: "cover",
