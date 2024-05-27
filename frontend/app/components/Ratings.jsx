@@ -12,7 +12,7 @@ export default function Ratings({song = 'Loading Song', album = 'Loading Album',
   const [currentWidth, setCurrentWidth] = useState(0);
   const widthRef = useRef(null);
   const songName = song // 'Fantasmas'
-  const albumCover =  '/We are the grand.jpeg';
+  const albumCover =  img // '/We are the grand.jpeg';
   const artistName = artist // 'We Are The Grand';
   const albumName = album // 'Volver';
   
@@ -36,7 +36,7 @@ export default function Ratings({song = 'Loading Song', album = 'Loading Album',
               <img
                 alt="Cover Image"
                 className="rounded-lg w-[50px] h-[50px]"
-                src={album}
+                src={albumCover}
                 style={{
                   aspectRatio: "1/1",
                   objectFit: "cover",

@@ -31,7 +31,7 @@ export default function searchOverlay({children, searchBar = false}) {
                                                 // console.log('log: ' + item + index);
                                                 let current = searchResults.artists.items[index];
                                                 console.log(item);
-                                                return <Ratings song='Song XXXXX' artist={item.name} album="Album XXXX" img={item.images[2]} />
+                                                return <Ratings song='Song XXXXX' artist={item.name} album="Album XXXX" img={item.images[2].url} />
                                             })
                                         ) : (
                                             <p className="text-white">No results found.</p>
