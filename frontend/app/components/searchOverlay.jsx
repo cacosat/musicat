@@ -8,7 +8,7 @@ import Ratings from '@/app/components/Ratings'
 
 export default function searchOverlay({children, searchBar = false}) {
 
-    const { query, showSearchResults, setShowSearchResults } = useContext(SearchQueryContext)
+    const { query, searchType, setSearchType, searchResults, showSearchResults, setShowSearchResults } = useContext(SearchQueryContext)
 
     return (
         <>
@@ -26,36 +26,16 @@ export default function searchOverlay({children, searchBar = false}) {
                                     </p>
                                     <div className="flex flex-col items-center gap-4 py-8">
                                         {/* Map over results */}
-                                        <Ratings />
-                                        <Ratings />
-                                        <Ratings />
-                                        <Ratings />
-                                        <Ratings />
-                                        <Ratings />
-                                        <Ratings />
-                                        <Ratings />
-                                        <Ratings />
-                                        <Ratings />
-                                        <Ratings />
-                                        <Ratings />
-                                        <Ratings />
-                                        <Ratings />
-                                        <Ratings />
-                                        <Ratings />
-                                        <Ratings />
-                                        <Ratings />
-                                        <Ratings />
-                                        <Ratings />
-                                        <Ratings />
-                                        <Ratings />
-                                        <Ratings />
-                                        <Ratings />
-                                        <Ratings />
-                                        <Ratings />
-                                        <Ratings />
-                                        <Ratings />
-                                        <Ratings />
-                                        <Ratings />
+                                        {searchResults.artists?.items ? (
+                                            searchResults.artists.items.map((item, index) => {
+                                                // console.log('log: ' + item + index);
+                                                let current = searchResults.artists.items[index];
+                                                console.log(item);
+                                                return <Ratings song='Song XXXXX' artist={item.name} album="Album XXXX" img={item.images[2]} />
+                                            })
+                                        ) : (
+                                            <p className="text-white">No results found.</p>
+                                        )}
                                     </div>
                                 </div>
                             </div>
