@@ -21,7 +21,6 @@ export default function SearchProvider({children}) {
                 const response = await fetch(`http://localhost:5000/api/spotify/spotify-search?query=${encodeURIComponent(query)}&type=${searchType}`);
                 search_data = await response.json();
                 setSearchResults(search_data);
-                console.log(search_data);
             } catch (error) {
                 console.error('Error fetching token data: ', error);
                 setSearchResults([]);
