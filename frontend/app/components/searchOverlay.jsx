@@ -5,6 +5,7 @@ import {useState, useEffect, useContext} from 'react';
 import SearchBar from "./searchBox";
 import { SearchQueryContext } from "../context";
 import Ratings from '@/app/components/Ratings'
+import SearchResult from "./searchResult";
 
 export default function searchOverlay({children, searchBar = false}) {
 
@@ -26,6 +27,7 @@ export default function searchOverlay({children, searchBar = false}) {
                                         Search results: <span className="font-light italic">{query}</span>
                                     </p>
                                     <div className="flex flex-col items-center gap-4 py-8">
+                                        <SearchResult />
                                         {/* .map() permite loopear sobre los resultados y asignar sus datos a los componentes,
                                         Lo que hace es que tiene dos argumentos, el item (el elemento sobre el cuál está actualmente) y
                                         el index (la posición del elemento dentro del array). */}
