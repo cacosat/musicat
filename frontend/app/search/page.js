@@ -2,7 +2,7 @@
 
 import React from "react";
 import SearchBar from "../components/searchBox";
-import Ratings from "@/app/components/Ratings"
+import SearchResult from "../components/searchResult";
 import { useContext } from "react";
 import { SearchQueryContext } from "../context";
 
@@ -27,16 +27,10 @@ export default function Search() {
                                      <p>{result.description}</p>
                                  </div>
                              ))} */}
-                            <Ratings />
-                            <Ratings />
-                            <Ratings />
-                            <Ratings />
-                            <Ratings />
-                            <Ratings />
-                            <Ratings />
-                            <Ratings />
-                            <Ratings />
-                            <Ratings />
+                            <SearchResult type='artist' />
+                            <SearchResult type='album' />
+                            <SearchResult type='song' />
+                            <SearchResult type='adsf' />
                         </div>
                     </div>
                     ) : null}
