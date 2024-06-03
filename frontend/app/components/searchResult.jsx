@@ -2,10 +2,10 @@ import React from "react";
 import GradientOutline from "./gradientOutline";
 import Badge from "./badge";
 
-export default function SearchResult({type, artist = 'Loading Artist', album = 'Loading Album', song = 'Loading Song'}) {
+export default function SearchResult({type, artist = 'Loading Artist', album = 'Loading Album', song = 'Loading Song', cover}) {
     const artistName = artist;
     const albumName = album;
-    const albumCover = '/albumIcon.svg'
+    const albumCover = cover;
     const songName = song;
     const borderGradients = {
         'artist': 'linear-gradient(to bottom, #6590FEBF, #6590FE33)',
@@ -31,7 +31,7 @@ export default function SearchResult({type, artist = 'Loading Artist', album = '
                     <a className="block text-lg font-semibold text-white" href="#" title={songName}>
                         {truncateText(songName, 15)}
                     </a>
-                    <span className="block text-sm font-light text-custom-gray-200" title={`Album: ${albumName}; Artist: ${artistName}`}>{truncateText(albumName, 15)} - {truncateText(artistName)}</span>
+                    <span className="block text-sm font-light text-custom-gray-200" title={`Album: ${albumName}; Artist: ${artistName}`}>{truncateText(albumName, 10)} - {truncateText(artistName, 10)}</span>
                 </>
             case 'artist':
                 return <>
