@@ -27,7 +27,9 @@ export default function searchOverlay({children, searchBar = false}) {
                                         Search results: <span className="font-light italic">{query}</span>
                                     </p>
                                     <div className="flex flex-col items-center gap-4 py-8">
-                                        <SearchResult />
+                                        <SearchResult type='song' />
+                                        <SearchResult type='artist' />
+                                        <SearchResult type='albu' />
                                         {/* .map() permite loopear sobre los resultados y asignar sus datos a los componentes,
                                         Lo que hace es que tiene dos argumentos, el item (el elemento sobre el cuál está actualmente) y
                                         el index (la posición del elemento dentro del array). */}
