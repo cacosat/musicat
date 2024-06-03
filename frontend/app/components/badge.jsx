@@ -1,12 +1,12 @@
 import React from "react";
 
 export default function Badge(props) {
-    const albumBorderColor = 'border-accent-green-dark';
-    const albumBgGradient = 'from-accent-green-dark/50';
+    const albumBorderColor = 'border-accent-green-light';
+    const albumBgGradient = 'from-accent-green-light/50';
     const artistBorderColor = 'border-accent-blue-dark';
     const artistBgGradient = 'from-accent-blue-dark/50';
-    const songBorderColor = 'border-accent-blue-light';
-    const songBgGradient = 'from-accent-blue-light/50';
+    const songBorderColor = 'border-accent-green-dark';
+    const songBgGradient = 'from-accent-green-dark/50';
 
     const badgeToDisplay = () => {
         if (props.type === 'artist') {
