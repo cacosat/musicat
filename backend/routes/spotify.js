@@ -21,7 +21,7 @@ router.get('/spotify-search', async (req, res) => {
         }
 
         // función de /utils/spotify.js que hace la búsqueda, necesita token, 'query' y 'type'
-        const search_data = await getSpotifySearch(token_data.access_token, query, type); 
+        const search_data = await getSpotifySearch(token_data.access_token, query, type); // devuelve un obj de la forma {artists:{...}, albums:{...}, tracks:{...}}
         res.json(search_data); // se devuelve variable con el resultado al navegador
     } catch (error) {
         console.error('Search failed: ', error);

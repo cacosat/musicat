@@ -30,7 +30,7 @@ export async function getSpotifySearch(token, query, type) {
     // fetch (ir a buscar) datos de búsqueda para tipos 'artist', 'album', 'track'
     // const response = await fetch('https://api.spotify.com/v1/search?q=' + query + '&type=' + type, searchParams); // request anterior
     const response = await fetch('https://api.spotify.com/v1/search?q=' + query + '&type=artist,album,track', searchParams);
-    const search_data = await response.json(); // devuelve un obj de la forma {artist:{...}, album:{...}, tracks:{...}}
+    const search_data = await response.json(); // devuelve un obj de la forma {artists:{...}, albums:{...}, tracks:{...}}
 
     return search_data;
 }
