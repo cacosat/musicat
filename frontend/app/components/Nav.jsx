@@ -10,6 +10,7 @@ import search from '@/assets/icons/search.png'
 import user from '@/assets/icons/user.png'
 import settings from '@/assets/icons/settings.png'
 import { SearchQueryContext } from "../context";
+import SignIn from "./signIn";
 
 export default function Navbar() {
     const {query, setQuery, showSearchResults, setShowSearchResults} = useContext(SearchQueryContext);
@@ -65,20 +66,23 @@ export default function Navbar() {
                         <p className=''>Profile</p>
                     </Link>
                 </div>
-                <Link href="/settings" 
-                    className="flex gap-2 hover:bg-[#FFFFFF1A] p-2 rounded-xl justify-self-end"
-                    onClick={() => {
-                        setQuery('');
-                        setShowSearchResults(false);
-                    }} >
-                    <Image
-                        src={settings}
-                        height={24}
-                        width={24}
-                        alt="settings"
-                    />
-                    <p className=''>Settings</p>
-                </Link>
+                <div className="flex flex-col gap-2">
+                    <SignIn />
+                    <Link href="/settings"
+                        className="flex gap-2 hover:bg-[#FFFFFF1A] p-2 rounded-xl justify-self-end"
+                        onClick={() => {
+                            setQuery('');
+                            setShowSearchResults(false);
+                        }} >
+                        <Image
+                            src={settings}
+                            height={24}
+                            width={24}
+                            alt="settings"
+                        />
+                        <p className=''>Settings</p>
+                    </Link>
+                </div>
             </nav>
         </div>
     </>
