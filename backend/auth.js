@@ -3,7 +3,17 @@ import Google from "next-auth/providers/google"
 
 export const {handlers, signIn, signOut, auth} = NextAuth({
     providers: [
-        Google,
+        Google({
+            clientId: process.env.GOOGLE_CLIENT_ID,
+            clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+            // authorization: {
+            //     params: {
+            //         prompt: "consent",
+            //         access_type: "offline",
+            //         response_type: "code"
+            //     }
+            // }
+        }),
         // For normal credentials: username and password: 
         // Credentials({
         //     // You can specify which fields should be submitted, by adding keys to the `credentials` object.
@@ -32,4 +42,13 @@ export const {handlers, signIn, signOut, auth} = NextAuth({
         //     },
         // }),
     ],
+    callbacks: {
+        async signIn(user, account, profile) {
+            return true;
+        },
+        async redirect(url, baseUrl) {
+            return baseUrl;
+        }
+    },
+    secret: process.env.SECRET,
 })
