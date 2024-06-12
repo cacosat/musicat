@@ -10,6 +10,7 @@ import search from '@/assets/icons/search.png'
 import user from '@/assets/icons/user.png'
 import settings from '@/assets/icons/settings.png'
 import { SearchQueryContext } from "../context";
+import SignIn from "./signIn";
 
 export default function Navbar() {
     const {query, setQuery, showSearchResults, setShowSearchResults} = useContext(SearchQueryContext);
