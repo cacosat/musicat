@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "./components/nav";
 import SearchProvider from "./components/searchProvider";
 import { Button } from "@/components/ui/button";
+import { ClerkProvider } from "@clerk/nextjs";
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -18,14 +19,16 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`${inter.className} bg-background h-screen`}>
         <div className="ml-[180px] h-full"> {/* margin left equivalent to Navbar width */}
-          <SearchProvider>
-            <div className=" z-[100]">
-              <Navbar />
-            </div>
-            <div className="h-full flex flex-col items-center overflow-y-scroll scrollbar scrollbar-track-transparent scrollbar-thumb-custom-cards">
-              {children}
-            </div>
-          </SearchProvider>
+          <ClerkProvider>
+            <SearchProvider>
+              <div className=" z-[100]">
+                <Navbar />
+              </div>
+              <div className="h-full flex flex-col items-center overflow-y-scroll scrollbar scrollbar-track-transparent scrollbar-thumb-custom-cards">
+                {children}
+              </div>
+            </SearchProvider>
+          </ClerkProvider>
         </div>
       </body>
     </html>

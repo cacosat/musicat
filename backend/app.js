@@ -3,6 +3,7 @@ import cors from 'cors';
 // import connectDB from './config/db.js';
 import dotenv from 'dotenv';
 import spotifyRoutes from './routes/spotify.js'
+import { withAuth } from '@clerk/clerk-sdk-node';
 
 // Load environment variables
 dotenv.config();
@@ -18,6 +19,16 @@ app.use(cors({
 
 // Middleware
 app.use(express.json());
+
+// auth test
+// app.use('/api/protected', withAuth, (req, res) => {
+//     console.log(req.user);
+//     if (req.user) {
+//         res.send(`You are logged in as ${req.user.id}`);
+//     } else {
+//         res.status(401).send('You are not logged in');
+//     }
+// })
 
 app.get('/api', (req, res) => {
     res.send('API is running...');
