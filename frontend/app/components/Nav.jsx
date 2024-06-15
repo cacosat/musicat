@@ -69,9 +69,11 @@ export default function Navbar() {
                 <div className="flex flex-col gap-2">
                     <div className="flex flex-col gap-2">
                         <SignedOut>
+                            <p className="text-white">signed out currently</p>
                             <SignInButton />
                         </SignedOut>
                         <SignedIn>
+                            <p className="text-white">signed in currently</p>
                             <UserButton />
                         </SignedIn>
                     </div>

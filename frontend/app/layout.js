@@ -4,7 +4,7 @@ import "./globals.css";
 import Navbar from "./components/nav";
 import SearchProvider from "./components/searchProvider";
 import { Button } from "@/components/ui/button";
-import { ClerkProvider } from "@clerk/nextjs";
+import { ClerkProvider, SignedIn, SignedOut } from "@clerk/nextjs";
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -25,7 +25,12 @@ export default function RootLayout({ children }) {
                 <Navbar />
               </div>
               <div className="h-full flex flex-col items-center overflow-y-scroll scrollbar scrollbar-track-transparent scrollbar-thumb-custom-cards">
-                {children}
+                {/* <SignedIn> */}
+                  {children}
+                {/* </SignedIn>
+                <SignedOut>
+                  <p>Please sign in to continue</p>
+                </SignedOut> */}
               </div>
             </SearchProvider>
           </ClerkProvider>
