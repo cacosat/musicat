@@ -2,6 +2,8 @@
 
 Musicat is a collaborative web application designed for music enthusiasts to share, rate, and review music. This project was developed using the MERN stack (MongoDB, Express.js, React, Node.js) and incorporates modern web development practices.
 
+Figma file: https://www.figma.com/design/7VAL53tEfU0iyFlVQhyHbe/musik-view-only?node-id=8-96&node-type=canvas&t=ZjVFnM6HKC5JOzGr-0
+
 ## Core Fundamentals
 
 ### Tech Stack
